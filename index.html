@@ -5,117 +5,150 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Etichetta Discografica</title>
   <style>
-    /* Stile base */
+    /* STILE GENERALE */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #121212;
-      color: #fff;
+      background-color: #fff;
+      color: #111;
     }
 
+    a {
+      color: #111;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #555;
+    }
+
+    /* HEADER */
     header {
-      background-color: #1db954;
-      padding: 20px;
+      padding: 40px 20px;
       text-align: center;
+      border-bottom: 1px solid #eee;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2em;
+      font-weight: 300;
+      font-size: 2.5em;
     }
 
+    header p {
+      margin-top: 10px;
+      font-weight: 200;
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    /* NAV */
     nav {
       display: flex;
       justify-content: center;
-      gap: 20px;
-      background-color: #222;
-      padding: 10px 0;
+      gap: 30px;
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+      background-color: #fafafa;
     }
 
     nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
+      font-weight: 500;
+      font-size: 1em;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
-    nav a:hover {
-      color: #1db954;
+    /* SEZIONE HOME */
+    #home {
+      padding: 60px 20px;
+      text-align: center;
     }
 
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
+    #home h2 {
+      font-weight: 300;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    #home p {
+      font-weight: 200;
+      font-size: 1.1em;
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    /* SEZIONE ARTISTI */
+    #artisti {
+      padding: 60px 20px;
+      max-width: 1200px;
       margin: auto;
     }
 
-    h2 {
+    #artisti h2 {
       text-align: center;
-      margin-bottom: 30px;
+      font-weight: 300;
+      font-size: 2em;
+      margin-bottom: 40px;
     }
 
-    .artist {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 20px;
-      align-items: center;
-      flex-wrap: wrap;
-      justify-content: center;
+    .artist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
     }
 
-    .artist img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 10px;
+    .artist-card {
+      text-align: center;
     }
 
-    .artist div {
-      max-width: 300px;
+    .artist-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
     }
 
+    .artist-card img:hover {
+      transform: scale(1.05);
+    }
+
+    .artist-card h3 {
+      margin: 10px 0 5px;
+      font-weight: 400;
+      font-size: 1.1em;
+    }
+
+    .artist-card p {
+      font-weight: 200;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
-      padding: 20px;
-      background-color: #222;
-      margin-top: 40px;
+      padding: 40px 20px;
+      font-size: 0.9em;
+      color: #777;
+      border-top: 1px solid #eee;
     }
 
     footer a {
-      color: #1db954;
-      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      max-width: 400px;
-      margin: auto;
-      gap: 10px;
-    }
-
-    input, textarea, button {
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-    }
-
-    button {
-      background-color: #1db954;
-      color: #fff;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    button:hover {
-      background-color: #17a44b;
-    }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Nome Etichetta Discografica</h1>
-    <p>La musica che ami, direttamente a te</p>
+    <p>Musica elegante e senza tempo</p>
   </header>
 
   <nav>
@@ -126,46 +159,43 @@
 
   <section id="home">
     <h2>Benvenuti</h2>
-    <p style="text-align:center;">Scopri i nostri artisti e le ultime uscite. Un’etichetta dedicata a portare la migliore musica al pubblico!</p>
+    <p>Scopri i nostri artisti e le ultime uscite. La nostra etichetta è dedicata a creare musica di qualità, elegante e senza tempo, valorizzando i dischi e le opere dei nostri artisti.</p>
   </section>
 
   <section id="artisti">
     <h2>I nostri artisti</h2>
-    <div class="artist">
-      <img src="https://via.placeholder.com/150" alt="Artista 1">
-      <div>
+    <div class="artist-grid">
+      <div class="artist-card">
+        <img src="https://via.placeholder.com/300x300.png?text=Disco+1" alt="Disco 1">
         <h3>Artista 1</h3>
-        <p>Genere musicale: Pop</p>
+        <p>Genere: Jazz</p>
       </div>
-    </div>
-    <div class="artist">
-      <img src="https://via.placeholder.com/150" alt="Artista 2">
-      <div>
+      <div class="artist-card">
+        <img src="https://via.placeholder.com/300x300.png?text=Disco+2" alt="Disco 2">
         <h3>Artista 2</h3>
-        <p>Genere musicale: Rock</p>
+        <p>Genere: Classica</p>
       </div>
-    </div>
-    <div class="artist">
-      <img src="https://via.placeholder.com/150" alt="Artista 3">
-      <div>
+      <div class="artist-card">
+        <img src="https://via.placeholder.com/300x300.png?text=Disco+3" alt="Disco 3">
         <h3>Artista 3</h3>
-        <p>Genere musicale: Elettronica</p>
+        <p>Genere: Elettronica</p>
+      </div>
+      <div class="artist-card">
+        <img src="https://via.placeholder.com/300x300.png?text=Disco+4" alt="Disco 4">
+        <h3>Artista 4</h3>
+        <p>Genere: Ambient</p>
       </div>
     </div>
   </section>
 
-  <section id="contatti">
+  <section id="contatti" style="padding:60px 20px; text-align:center;">
     <h2>Contattaci</h2>
-    <form>
-      <input type="text" placeholder="Nome" required>
-      <input type="email" placeholder="Email" required>
-      <textarea placeholder="Messaggio" rows="5" required></textarea>
-      <button type="submit">Invia</button>
-    </form>
+    <p>Per informazioni, collaborazioni o richieste stampa, scrivici all’indirizzo: <a href="mailto:info@etichetta.it">info@etichetta.it</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Nome Etichetta Discografica | <a href="#">Instagram</a> | <a href="#">Facebook</a></p>
+    &copy; 2025 Nome Etichetta Discografica | <a href="#">Instagram</a> | <a href="#">Facebook</a>
   </footer>
+
 </body>
 </html>
