@@ -1,137 +1,82 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Etichetta Discografica - Artisti</title>
-  <style>
-    /* RESET */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background: #fff; color: #111; }
+<style>
+  /* reset minimo */
+  .demo-policy,
+  .demo-policy * {
+    box-sizing: border-box;
+  }
 
-    /* Header con logo Home */
-    header {
-      display: flex;
-      align-items: center;
-      padding: 10px 20px;
-    }
+  /* logo */
+  .logo-wrapper {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    padding: 15px;
+    z-index: 9999;
+  }
 
-    header a {
-      display: inline-block;
-    }
+  .logo-wrapper img {
+    height: 80px;
+    width: auto;
+    display: block;
+  }
 
-    header img {
-      height: 80px; /* altezza logo */
-      width: auto;
-      cursor: pointer;
-    }
+  /* contenuto */
+  .demo-policy-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* centra il blocco */
+  }
 
-    /* Sezione Artisti */
-    #artisti {
-      padding: 20px;
-    }
+  .demo-policy {
+    max-width: 800px;
+    width: 100%;
+    text-align: center !important; /* forza la centratura */
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
 
-    /* Griglia artisti 3 colonne */
-    .grid-artisti {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 colonne fisse */
-      gap: 10px;              /* piccolo spazio tra le immagini */
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+  .demo-policy ul {
+    list-style-position: inside;
+    padding: 0;
+    margin: 0 auto;
+  }
 
-    .artista-card {
-      position: relative; /* necessario per testo sovrapposto */
-      overflow: hidden;
-    }
+  .demo-policy li {
+    text-align: center;
+  }
+</style>
 
-    .artista-card img {
-      width: 100%;
-      height: 350px;         /* immagini grandi */
-      object-fit: cover;
-      display: block;
-      transition: transform 0.25s ease;
-    }
-
-    .artista-card img:hover {
-      transform: scale(1.05);
-    }
-
-    /* Nome artista visibile solo al passaggio del mouse */
-    .artista-card p {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 10px 0;
-      margin: 0;
-      background: rgba(0, 0, 0, 0.6);
-      color: #fff;
-      font-weight: 500;
-      font-size: 1rem;
-      text-align: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .artista-card:hover p {
-      opacity: 1;
-    }
-
-    /* Footer semplice */
-    footer {
-      text-align: center;
-      padding: 20px 0;
-      font-size: 0.9rem;
-      color: #777;
-      border-top: 1px solid #eee;
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  <!-- Logo cliccabile come Home -->
+<!-- LOGO -->
+<div class="logo-wrapper">
   <a href="index.html">
-    <img src="images/logo.png" alt="Logo Etichetta">
+    <img src="images/logo.png" alt="[Your Label Name] Logo">
   </a>
-</header>
+</div>
 
-<section id="artisti">
-  <div class="grid-artisti">
-    <div class="artista-card">
-      <img src="images/eliacasu.png" alt="Elia Casu">
-      <p>Elia Casu</p>
-    </div>
-    <div class="artista-card">
-      <img src="images/andrearuggeri.png" alt="Andrea Ruggeri">
-      <p>Andrea Ruggeri</p>
-    </div>
-    <div class="artista-card">
-      <img src="images/claudiomelis.png" alt="Claudio Melis">
-      <p>Claudio Melis</p>
-    </div>
-    <div class="artista-card">
-      <img src="images/sebastianodessanay.png" alt="Sebastiano Dessanay">
-      <p>Sebastiano Dessanay</p>
-    </div>
-    <div class="artista-card">
-      <img src="images/antoniopinna.png" alt="Antonio Pinna">
-      <p>Antonio Pinna</p>
-    </div>
-    <div class="artista-card">
-      <img src="images/elsamartin.png" alt="Elsa Martin">
-      <p>Elsa Martin</p>
-    </div>
-  </div>
-</section>
+<!-- CONTENUTO -->
+<div class="demo-policy-container">
+  <section class="demo-policy">
+    <h2>Demo Submission Policy</h2>
 
-<footer>
-  &copy; 2025 Mraxani Label
-</footer>
-<section id="demo-policy" style="text-align: center;">
-  ...
-</section>
-</body>
-</html>
+    <p>
+      Thank you for your interest in submitting your music to <strong>[Your Label Name]</strong>.
+    </p>
+
+    <p>
+      We are a young and independent record label. We are open to receiving demos and we carefully
+      listen to all the material we receive.
+    </p>
+
+    <h3>How to Submit</h3>
+
+    <ul>
+      <li>Send a private streaming or download link</li>
+      <li>Include a short artist bio</li>
+      <li>Add your contact details</li>
+    </ul>
+
+    <p>
+      If we feel your music fits our vision, we will get in touch.
+    </p>
+  </section>
+</div>
