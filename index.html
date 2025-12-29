@@ -4,248 +4,152 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Etichetta Discografica</title>
+
   <style>
-        /* RESET DEI MARGINI E PADDING GLOBALI */
+    /* RESET BASE */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #111;
+    }
 
-    /* STILE NAV */
+    /* HEADER */
+    header {
+      text-align: center;
+      padding: 20px 0;
+    }
+    header img {
+      width: 180px; /* dimensione logo */
+      height: auto;
+    }
+
+    /* NAV */
     nav {
-      padding: 10px 0; /* riduce altezza della barra */
-      background-color: #fafafa;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background: #fafafa;
+      border-bottom: 1px solid #eee;
+      padding: 12px 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #111;
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+    }
+    nav a:hover {
+      color: #555;
     }
 
     /* SEZIONE RELEASES */
     #releases {
-      padding-top: 10px; /* spazio minimo sopra releases */
-    }
-
-    #releases h2 {
-      margin-top: 0; /* rimuove margine predefinito */
-    }
-    /* STILE GENERALE */
-    body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fff;
-      color: #111;
-    }
-
-    a {
-      color: #111;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: #555;
-    }
-
-    /* HEADER */
-header {
-  padding: 5px 5px;
-  text-align: center;
-  border-bottom: 1px solid #eee;
-}
-
-    header h1 {
-      margin: 0;
-      font-weight: 300;
-      font-size: 2.5em;
-    }
-
-    header p {
-      margin-top: 10px;
-      font-weight: 200;
-      font-size: 1.1em;
-      color: #555;
-    }
-
-    /* NAV */
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  padding: 6px 0;
-  margin: 0;
-  border-bottom: 1px solid #eee;
-  background-color: #fafafa;
-}
-
-    nav a {
-      font-weight: 500;
-      font-size: 1em;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    /* SEZIONE HOME */
-    #home {
-      padding: 60px 20px;
+      padding: 10px 20px; /* spazio compattato */
       text-align: center;
     }
-
-    #home h2 {
-      font-weight: 300;
-      font-size: 2em;
+    #releases h2 {
+      font-size: 1.8rem;
+      font-weight: 400;
       margin-bottom: 20px;
     }
 
-    #home p {
-      font-weight: 200;
-      font-size: 1.1em;
-      max-width: 600px;
-      margin: auto;
-      line-height: 1.6;
-    }
-
-    /* SEZIONE ARTISTI */
-    #artisti {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    #artisti h2 {
-      text-align: center;
-      font-weight: 300;
-      font-size: 2em;
-      margin-bottom: 40px;
-    }
-
-    .artist-grid {
+    /* GRIGLIA DISCHI */
+    .grid-releases {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      max-width: 1000px;
+      margin: auto;
     }
 
-    .artist-card {
+    .album {
       text-align: center;
     }
-
-    .artist-card img {
-      width: 100%;
-      height: auto;
-      border-radius: 5px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
+    .album img {
+      width: 100%;       /* immagini adattive */
+      max-width: 140px;  /* dimensione massima */
+      border-radius: 6px;
+      transition: transform 0.3s ease;
     }
-
-    .artist-card img:hover {
+    .album img:hover {
       transform: scale(1.05);
     }
-
-    .artist-card h3 {
-      margin: 10px 0 5px;
-      font-weight: 400;
-      font-size: 1.1em;
-    }
-
-    .artist-card p {
-      font-weight: 200;
-      font-size: 0.9em;
-      color: #555;
+    .album p {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: #444;
     }
 
     /* FOOTER */
     footer {
       text-align: center;
-      padding: 40px 20px;
-      font-size: 0.9em;
+      padding: 25px 0;
+      font-size: 0.9rem;
       color: #777;
       border-top: 1px solid #eee;
+      margin-top: 40px;
     }
-
     footer a {
-      margin: 0 10px;
-      font-weight: 500;
+      margin: 0 8px;
+      color: #111;
+      text-decoration: none;
     }
-.logo {
-  max-width: 220px;
-  width: 100%;
-  height: auto;
-  margin-bottom: 15px;
-}
-    #artisti h2 {
-  margin-top: 0;
-}
-    nav {
-  margin-bottom: 0;
-}
-
-section {
-  padding-top: 0;
-}
-
-h2 {
-  margin-top: 0;
-}
-
-#releases {
-  padding-top: 0; /* rimuove il padding superiore */
-  margin-top: 0;  /* rimuove il margin superiore */
-}
-
-#releases h2 {
-  margin-top: 0;  /* rimuove il margin predefinito dell’h2 */
-  padding-top: 0;
-}
-
-    nav {
-  padding: 10px 0;  /* riduce l’altezza della barra */
-  margin-bottom: 0; /* elimina spazio extra sotto la barra */
-}
+    footer a:hover {
+      color: #555;
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <img src="images/logo.png" alt="Nome Etichetta Discografica" class="logo">
-</header>
+  <!-- LOGO -->
+  <header>
+    <img src="images/logo.png" alt="Logo Etichetta"> <!-- metti qui il tuo logo -->
+  </header>
 
+  <!-- BARRA DI NAV -->
   <nav>
-    <a href="#home">Home</a>
-    <a href="#artisti">Artists</a>
-    <a href="#contatti">Contacts</a>
+    <a href="#releases">Releases</a>
+    <a href="#contatti">Contatti</a>
   </nav>
 
-
-  <section id="artisti">
+  <!-- RELEASES -->
+  <section id="releases">
     <h2>Releases</h2>
-    <div class="artist-grid">
-      <div class="artist-card">
+    <div class="grid-releases">
+      <div class="album">
         <img src="images/disco1.png" alt="Disco 1">
-        <h3>Andrea Ruggeri</h3>
-        <p>Genere: Jazz</p>
+        <p>Artista 1 – Disco 1</p>
       </div>
-      <div class="artist-card">
+      <div class="album">
         <img src="images/disco2.jpg" alt="Disco 2">
-        <h3>Elia Casu</h3>
-        <p>Genere: Classica</p>
+        <p>Artista 2 – Disco 2</p>
       </div>
-      <div class="artist-card">
+      <div class="album">
         <img src="images/disco3.png" alt="Disco 3">
-        <h3>Sebastiano Dessanay</h3>
-        <p>Genere: Elettronica</p>
+        <p>Artista 3 – Disco 3</p>
       </div>
-      <div class="artist-card">
-       <img src="images/disco4.png" alt="Disco 4">
-        <h3>Antonio Pinna</h3>
-        <p>Genere: Ambient</p>
+      <div class="album">
+        <img src="images/disco4.png" alt="Disco 4">
+        <p>Artista 4 – Disco 4</p>
       </div>
     </div>
   </section>
 
-  <section id="contatti" style="padding:60px 20px; text-align:center;">
-    <h2>Contattaci</h2>
-    <p>Per informazioni, collaborazioni o richieste stampa, scrivici all’indirizzo: <a href="mailto:info@etichetta.it">info@etichetta.it</a></p>
+  <!-- CONTATTI -->
+  <section id="contatti" style="padding: 30px 20px; text-align:center;">
+    <h2>Contatti</h2>
+    <p>Per info: <a href="mailto:info@etichetta.it">info@etichetta.it</a></p>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    &copy; 2025 Nome Etichetta Discografica | <a href="#">Instagram</a> | <a href="#">Facebook</a>
+    &copy; 2025 Etichetta Discografica | <a href="#">Instagram</a> | <a href="#">Facebook</a>
   </footer>
 
 </body>
