@@ -1,28 +1,23 @@
 <section id="demo-policy" style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #333;">
 <!-- Header con logo -->
 <style>
-  html, body {
-    margin: 0;
-    padding: 0;
-  }
-
   .logo-home {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0;
-    margin: 0;
-    z-index: 9999;
+    position: fixed;
+    inset: 0 auto auto 0; /* top right bottom left */
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 2147483647; /* massimo possibile */
+    pointer-events: auto;
   }
 
   .logo-home img {
-    height: 120px; /* logo grande */
+    height: 120px;
     width: auto;
     display: block;
   }
 </style>
 
-<a href="index.html" class="logo-home">
+<a href="/" class="logo-home">
   <img src="images/logo.png" alt="[Your Label Name] Logo">
 </a>
   <h2 style="text-align: center; color: #222;">Demo Submission Policy</h2>
