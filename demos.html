@@ -1,31 +1,30 @@
 <section id="demo-policy" style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #333;">
 <!-- Header con logo -->
 <style>
-  /* Reset dei margini e padding globali */
   html, body {
     margin: 0;
     padding: 0;
   }
 
-  header {
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    padding: 10px 20px 10px 0; /* top, right, bottom, left */
+  .logo-home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    z-index: 9999;
   }
 
-  header a img {
-    height: 100px; /* dimensione del logo */
+  .logo-home img {
+    height: 120px; /* logo grande */
     width: auto;
     display: block;
   }
 </style>
 
-<header>
-  <a href="index.html">
-    <img src="images/logo.png" alt="[Your Label Name] Logo">
-  </a>
-</header>
+<a href="index.html" class="logo-home">
+  <img src="path/to/your-logo.png" alt="[Your Label Name] Logo">
+</a>
   <h2 style="text-align: center; color: #222;">Demo Submission Policy</h2>
   
   <p>Thank you for your interest in submitting your music to <strong>Mraxani Label</strong>!</p>
