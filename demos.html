@@ -18,33 +18,26 @@
     color: #333;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* centra tutto il contenuto orizzontalmente */
   }
 
-  /* Container principale */
-  .container {
-    width: 100%;
-    max-width: 900px;
-    padding: 20px;
+  /* Logo centrato */
+  .logo-link {
+    margin: 20px 0; /* distanza dal bordo superiore */
   }
 
-  /* Logo in alto a sinistra */
-  .logo-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-bottom: 20px;
-  }
-
-  .logo-container a img {
-    height: 80px;
+  .logo-link img {
+    height: 80px; /* dimensione logo */
     width: auto;
     display: block;
   }
 
-  /* Sezione Demo Policy centrata */
+  /* Container per la Demo Policy */
   #demo-policy {
-    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    text-align: center; /* centra titoli e paragrafi */
     line-height: 1.6;
   }
 
@@ -64,65 +57,60 @@
   #demo-policy a:hover {
     text-decoration: underline;
   }
-
 </style>
 </head>
 <body>
 
-<div class="container">
-  <!-- Logo cliccabile -->
-  <div class="logo-container">
-    <a href="index.html">
-      <img src="images/logo.png" alt="[Your Label Name] Logo">
-    </a>
-  </div>
+<!-- Logo centrato -->
+<a href="index.html" class="logo-link">
+  <img src="images/logo.png" alt="[Your Label Name] Logo">
+</a>
 
-  <!-- Demo Policy Section -->
-  <section id="demo-policy">
-    <h2 style="margin-bottom: 10px;">Demo Submission Policy</h2>
-    
-    <p style="margin-bottom: 10px;">
-      Thank you for your interest in submitting your music to <strong>[Your Label Name]</strong>!
-    </p>
-    
-    <p style="margin-bottom: 10px;">
-      We are a young and passionate independent record label, always on the lookout for new sounds and fresh talent. We <strong>welcome demo submissions from artists and producers of all levels</strong> and are committed to listening to <strong>all material we receive</strong>.
-    </p>
+<!-- Demo Policy Section -->
+<section id="demo-policy">
+  <h2 style="margin-top: 0; margin-bottom:10px;">Demo Submission Policy</h2>
+  
+  <p style="margin-top:0; margin-bottom:10px;">
+    Thank you for your interest in submitting your music to <strong>[Your Label Name]</strong>!
+  </p>
+  
+  <p style="margin-top:0; margin-bottom:10px;">
+    We are a young and passionate independent record label, always on the lookout for new sounds and fresh talent. We <strong>welcome demo submissions from artists and producers of all levels</strong> and are committed to listening to <strong>all material we receive</strong>.
+  </p>
 
-    <h3 style="margin-top:15px; margin-bottom:5px;">What We Are Looking For</h3>
-    <p style="margin-bottom:10px;">
-      We are open to demos in all genres that fit the artistic vision of our label. We encourage creativity and originality — even if your style doesn’t perfectly match our current roster.
-    </p>
+  <h3 style="margin-top:15px; margin-bottom:5px;">What We Are Looking For</h3>
+  <p style="margin-top:0; margin-bottom:10px;">
+    We are open to demos in all genres that fit the artistic vision of our label. We encourage creativity and originality — even if your style doesn’t perfectly match our current roster.
+  </p>
 
-    <h3 style="margin-top:15px; margin-bottom:5px;">How to Submit</h3>
-    <p style="margin-bottom:10px;">
-      Please send your demo by email to: <a href="mailto:demo@[yourlabel].com">demo@[yourlabel].com</a>
-    </p>
-    <ul>
-      <li>A private streaming link (SoundCloud, Dropbox, Google Drive, etc.) or downloadable link to your tracks</li>
-      <li>A short artist bio or press kit</li>
-      <li>Links to your social media and music platforms (if available)</li>
-    </ul>
+  <h3 style="margin-top:15px; margin-bottom:5px;">How to Submit</h3>
+  <p style="margin-top:0; margin-bottom:10px;">
+    Please send your demo by email to: <a href="mailto:demo@[yourlabel].com">demo@[yourlabel].com</a>
+  </p>
+  <ul>
+    <li>A private streaming link (SoundCloud, Dropbox, Google Drive, etc.) or downloadable link to your tracks</li>
+    <li>A short artist bio or press kit</li>
+    <li>Links to your social media and music platforms (if available)</li>
+  </ul>
 
-    <h3 style="margin-top:15px; margin-bottom:5px;">Review Process</h3>
-    <p style="margin-bottom:10px;">
-      We <strong>listen to every demo we receive</strong>, but please understand that response times may vary. If your music fits what we’re looking for and we see a potential collaboration, we will contact you to discuss next steps.
-    </p>
+  <h3 style="margin-top:15px; margin-bottom:5px;">Review Process</h3>
+  <p style="margin-top:0; margin-bottom:10px;">
+    We <strong>listen to every demo we receive</strong>, but please understand that response times may vary. If your music fits what we’re looking for and we see a potential collaboration, we will contact you to discuss next steps.
+  </p>
 
-    <h3 style="margin-top:15px; margin-bottom:5px;">Important Notes</h3>
-    <ul>
-      <li>Submitting your demo does <strong>not</strong> guarantee a contract or release.</li>
-      <li>By submitting, you affirm that you own all rights to the music you send and that it is your original work.</li>
-    </ul>
+  <h3 style="margin-top:15px; margin-bottom:5px;">Important Notes</h3>
+  <ul>
+    <li>Submitting your demo does <strong>not</strong> guarantee a contract or release.</li>
+    <li>By submitting, you affirm that you own all rights to the music you send and that it is your original work.</li>
+  </ul>
 
-    <p style="margin-bottom:10px;">
-      We look forward to hearing what you’ve been working on! 🎧🔥
-    </p>
-    <p style="font-weight:bold; margin-top:0;">
-      [Your Label Name] — Always listening.
-    </p>
-  </section>
-</div>
+  <p style="margin-top:0; margin-bottom:10px;">
+    We look forward to hearing what you’ve been working on! 🎧🔥
+  </p>
+  <p style="font-weight:bold; margin-top:0;">
+    [Your Label Name] — Always listening.
+  </p>
+</section>
 
 </body>
 </html>
