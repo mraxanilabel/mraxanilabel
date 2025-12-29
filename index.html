@@ -4,39 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Etichetta Discografica</title>
-
   <style>
-    /* RESET BASE */
+    /* RESET */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
       font-family: Arial, sans-serif;
       background: #fff;
       color: #111;
     }
 
-    /* HEADER */
+    /* HEADER / LOGO */
     header {
       text-align: center;
-      padding: 20px 0;
+      padding: 10px 0;
     }
+
     header img {
-      width: 180px; /* dimensione logo */
-      height: auto;
+      height: 60px;
+      width: auto;
+      display: block;
+      margin: 0 auto;
     }
 
     /* NAV */
     nav {
       display: flex;
       justify-content: center;
-      gap: 30px;
-      background: #fafafa;
+      gap: 20px;
+      padding: 8px 0;
+      background-color: #fafafa;
       border-bottom: 1px solid #eee;
-      padding: 12px 0;
+      margin-bottom: 0;
     }
+
     nav a {
       text-decoration: none;
       color: #111;
@@ -44,26 +49,30 @@
       font-size: 0.95rem;
       text-transform: uppercase;
     }
+
     nav a:hover {
       color: #555;
     }
 
     /* SEZIONE RELEASES */
     #releases {
-      padding: 10px 20px; /* spazio compattato */
+      padding-top: 5px;
+      padding-bottom: 20px;
       text-align: center;
     }
+
     #releases h2 {
       font-size: 1.8rem;
       font-weight: 400;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+      margin-top: 0;
     }
 
     /* GRIGLIA DISCHI */
     .grid-releases {
       display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
       max-width: 1000px;
       margin: auto;
     }
@@ -71,19 +80,43 @@
     .album {
       text-align: center;
     }
+
     .album img {
-      width: 100%;       /* immagini adattive */
-      max-width: 140px;  /* dimensione massima */
+      width: 100%;
+      height: auto;
+      object-fit: cover;
       border-radius: 6px;
-      transition: transform 0.3s ease;
+      transition: transform 0.25s ease;
     }
+
     .album img:hover {
       transform: scale(1.05);
     }
+
     .album p {
       margin-top: 8px;
       font-size: 0.9rem;
       color: #444;
+    }
+
+    /* SEZIONE CONTATTI */
+    #contatti {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    #contatti h2 {
+      margin-bottom: 15px;
+    }
+
+    #contatti a {
+      color: #111;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    #contatti a:hover {
+      color: #555;
     }
 
     /* FOOTER */
@@ -95,35 +128,23 @@
       border-top: 1px solid #eee;
       margin-top: 40px;
     }
+
     footer a {
       margin: 0 8px;
       color: #111;
       text-decoration: none;
     }
+
     footer a:hover {
       color: #555;
     }
-      nav {
-    margin-bottom: 0;
-    padding: 8px 0;
-  }
-
-  #releases {
-    padding-top: 5px;
-    padding-bottom: 20px;
-  }
-
-  #releases h2 {
-    margin-top: 0;
-    padding-top: 0;
-  }
   </style>
 </head>
 <body>
 
   <!-- LOGO -->
   <header>
-    <img src="images/logo.png" alt="Logo Etichetta"> <!-- metti qui il tuo logo -->
+    <img src="images/logo.png" alt="Logo Etichetta">
   </header>
 
   <!-- BARRA DI NAV -->
@@ -156,7 +177,7 @@
   </section>
 
   <!-- CONTATTI -->
-  <section id="contatti" style="padding: 30px 20px; text-align:center;">
+  <section id="contatti">
     <h2>Contatti</h2>
     <p>Per info: <a href="mailto:info@etichetta.it">info@etichetta.it</a></p>
   </section>
