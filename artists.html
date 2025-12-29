@@ -9,84 +9,81 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: Arial, sans-serif; background: #fff; color: #111; }
 
-    /* Header e logo */
-    header { text-align: center; padding: 10px 0; }
-    header img { height: 100px; width: auto; }
-
-    /* Pulsante Home */
-    .home-button {
-      display: block;
-      width: 120px;
-      margin: 20px auto;
-      padding: 10px 0;
-      text-align: center;
-      background-color: #dddddd;
-      color: #111;
-      text-decoration: none;
-      font-weight: 500;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      transition: background-color 0.25s ease;
+    /* Header con logo Home */
+    header {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
     }
-    .home-button:hover {
-      background-color: #cccccc;
+
+    header a {
+      display: inline-block;
+    }
+
+    header img {
+      height: 80px;        /* altezza logo */
+      width: auto;
+      cursor: pointer;
     }
 
     /* Sezione Artisti */
-    #artisti { padding: 40px 20px; text-align: center; }
-    #artisti h2 { font-size: 1.8rem; font-weight: 400; margin-bottom: 25px; }
+    #artisti {
+      padding: 20px;
+    }
 
-/* Griglia artisti full-width */
-.grid-artisti {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* colonne larghe */
-  gap: 10px;               /* spazio minimo tra le immagini */
-  margin: 0;               /* niente margini laterali */
-  padding: 0;              /* niente padding */
-  max-width: 100%;         /* occupa tutta la larghezza della pagina */
-}
+    /* Griglia artisti full-width */
+    .grid-artisti {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 0;                 /* nessuno spazio tra immagini */
+      width: 100%;
+    }
 
-/* Card artista */
-.artista-card {
-  overflow: hidden;
-  border-radius: 0;        /* elimina bordi arrotondati per occupare tutta la larghezza */
-}
+    .artista-card {
+      overflow: hidden;
+    }
 
-.artista-card img {
-  width: 100%;
-  height: 350px;           /* immagini molto alte */
-  object-fit: cover;       /* ritaglia senza deformare */
-  display: block;
-  transition: transform 0.25s ease;
-}
+    .artista-card img {
+      width: 100%;
+      height: 350px;          /* immagini grandi */
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease;
+    }
 
-.artista-card img:hover {
-  transform: scale(1.05);
-}
+    .artista-card img:hover {
+      transform: scale(1.05);
+    }
 
+    /* Nome artista sotto immagine */
     .artista-card p {
-      margin-top: 8px;
+      text-align: center;
+      padding: 8px 0;
       font-weight: 500;
       color: #444;
       font-size: 0.95rem;
-      text-align: center;
     }
 
-    /* Footer */
-    footer { text-align: center; padding: 25px 0; font-size: 0.9rem; color: #777; border-top: 1px solid #eee; }
-
+    /* Footer semplice */
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9rem;
+      color: #777;
+      border-top: 1px solid #eee;
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="images/logo.png" alt="Logo Etichetta">
+  <!-- Logo cliccabile come Home -->
+  <a href="index.html">
+    <img src="images/logo.png" alt="Logo Etichetta">
+  </a>
 </header>
 
-<a href="index.html" class="home-button">Home</a>
-
 <section id="artisti">
-  <h2>Artisti</h2>
   <div class="grid-artisti">
     <div class="artista-card">
       <img src="images/eliacasu.png" alt="Artista 1">
@@ -97,16 +94,16 @@
       <p>Artista 2</p>
     </div>
     <div class="artista-card">
-      <img src="images/claudiomelis.png" alt="Artista 3">
+      <img src="images/sebastianodessanay.png" alt="Artista 3">
       <p>Artista 3</p>
     </div>
     <div class="artista-card">
-      <img src="images/sebastianodessanay.png" alt="Artista 4">
+      <img src="images/claudiomelis.png" alt="Artista 4">
       <p>Artista 4</p>
     </div>
-      <div class="artista-card">
+     <div class="artista-card">
       <img src="images/antoniopinna.png" alt="Artista 5">
-      <p>Artista 5</p>
+      <p>Artista 4</p>
     </div>
     <!-- Aggiungi altri artisti nello stesso formato -->
   </div>
