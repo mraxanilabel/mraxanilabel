@@ -6,40 +6,48 @@
 <title>[Your Label Name] - Demo Policy</title>
 <style>
   /* Reset globale */
-  html, body {
+  * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
 
   body {
     font-family: Arial, sans-serif;
     background-color: #fff;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  /* Logo cliccabile senza creare spazio extra */
-  .logo-link {
-    display: inline-block;
-    line-height: 0; /* elimina spazio extra */
-    margin: 10px 0 0 20px; /* distanza dal bordo superiore e sinistro */
+  /* Container principale */
+  .container {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
   }
 
-  .logo-link img {
-    height: 80px; /* dimensione logo */
+  /* Logo in alto a sinistra */
+  .logo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .logo-container a img {
+    height: 80px;
     width: auto;
-    display: block; /* rimuove spazio sotto immagine */
+    display: block;
   }
 
   /* Sezione Demo Policy centrata */
   #demo-policy {
-    max-width: 800px;
-    margin: 10px auto; /* spazio minimo sopra la sezione */
-    padding: 20px;
-    text-align: center; /* centra testi e titoli */
+    text-align: center;
     line-height: 1.6;
   }
 
-  /* Liste centrate ma testo interno allineato a sinistra */
   #demo-policy ul {
     list-style-position: inside;
     display: inline-block;
@@ -56,60 +64,65 @@
   #demo-policy a:hover {
     text-decoration: underline;
   }
+
 </style>
 </head>
 <body>
 
-<!-- Logo cliccabile solo sulla sua area -->
-<a href="index.html" class="logo-link">
-  <img src="images/logo.png" alt="[Your Label Name] Logo">
-</a>
+<div class="container">
+  <!-- Logo cliccabile -->
+  <div class="logo-container">
+    <a href="index.html">
+      <img src="images/logo.png" alt="[Your Label Name] Logo">
+    </a>
+  </div>
 
-<!-- Demo Policy Section -->
-<section id="demo-policy">
-  <h2 style="margin-top: 0;">Demo Submission Policy</h2>
-  
-  <p style="margin-top:0; margin-bottom:10px;">
-    Thank you for your interest in submitting your music to <strong>[Your Label Name]</strong>!
-  </p>
-  
-  <p style="margin-top:0; margin-bottom:10px;">
-    We are a young and passionate independent record label, always on the lookout for new sounds and fresh talent. We <strong>welcome demo submissions from artists and producers of all levels</strong> and are committed to listening to <strong>all material we receive</strong>.
-  </p>
+  <!-- Demo Policy Section -->
+  <section id="demo-policy">
+    <h2 style="margin-bottom: 10px;">Demo Submission Policy</h2>
+    
+    <p style="margin-bottom: 10px;">
+      Thank you for your interest in submitting your music to <strong>[Your Label Name]</strong>!
+    </p>
+    
+    <p style="margin-bottom: 10px;">
+      We are a young and passionate independent record label, always on the lookout for new sounds and fresh talent. We <strong>welcome demo submissions from artists and producers of all levels</strong> and are committed to listening to <strong>all material we receive</strong>.
+    </p>
 
-  <h3 style="margin-top:15px; margin-bottom:5px;">What We Are Looking For</h3>
-  <p style="margin-top:0; margin-bottom:10px;">
-    We are open to demos in all genres that fit the artistic vision of our label. We encourage creativity and originality — even if your style doesn’t perfectly match our current roster.
-  </p>
+    <h3 style="margin-top:15px; margin-bottom:5px;">What We Are Looking For</h3>
+    <p style="margin-bottom:10px;">
+      We are open to demos in all genres that fit the artistic vision of our label. We encourage creativity and originality — even if your style doesn’t perfectly match our current roster.
+    </p>
 
-  <h3 style="margin-top:15px; margin-bottom:5px;">How to Submit</h3>
-  <p style="margin-top:0; margin-bottom:10px;">
-    Please send your demo by email to: <a href="mailto:demo@[yourlabel].com">demo@[yourlabel].com</a>
-  </p>
-  <ul>
-    <li>A private streaming link (SoundCloud, Dropbox, Google Drive, etc.) or downloadable link to your tracks</li>
-    <li>A short artist bio or press kit</li>
-    <li>Links to your social media and music platforms (if available)</li>
-  </ul>
+    <h3 style="margin-top:15px; margin-bottom:5px;">How to Submit</h3>
+    <p style="margin-bottom:10px;">
+      Please send your demo by email to: <a href="mailto:demo@[yourlabel].com">demo@[yourlabel].com</a>
+    </p>
+    <ul>
+      <li>A private streaming link (SoundCloud, Dropbox, Google Drive, etc.) or downloadable link to your tracks</li>
+      <li>A short artist bio or press kit</li>
+      <li>Links to your social media and music platforms (if available)</li>
+    </ul>
 
-  <h3 style="margin-top:15px; margin-bottom:5px;">Review Process</h3>
-  <p style="margin-top:0; margin-bottom:10px;">
-    We <strong>listen to every demo we receive</strong>, but please understand that response times may vary. If your music fits what we’re looking for and we see a potential collaboration, we will contact you to discuss next steps.
-  </p>
+    <h3 style="margin-top:15px; margin-bottom:5px;">Review Process</h3>
+    <p style="margin-bottom:10px;">
+      We <strong>listen to every demo we receive</strong>, but please understand that response times may vary. If your music fits what we’re looking for and we see a potential collaboration, we will contact you to discuss next steps.
+    </p>
 
-  <h3 style="margin-top:15px; margin-bottom:5px;">Important Notes</h3>
-  <ul>
-    <li>Submitting your demo does <strong>not</strong> guarantee a contract or release.</li>
-    <li>By submitting, you affirm that you own all rights to the music you send and that it is your original work.</li>
-  </ul>
+    <h3 style="margin-top:15px; margin-bottom:5px;">Important Notes</h3>
+    <ul>
+      <li>Submitting your demo does <strong>not</strong> guarantee a contract or release.</li>
+      <li>By submitting, you affirm that you own all rights to the music you send and that it is your original work.</li>
+    </ul>
 
-  <p style="margin-top:0; margin-bottom:10px;">
-    We look forward to hearing what you’ve been working on! 🎧🔥
-  </p>
-  <p style="font-weight:bold; margin-top:0;">
-    [Your Label Name] — Always listening.
-  </p>
-</section>
+    <p style="margin-bottom:10px;">
+      We look forward to hearing what you’ve been working on! 🎧🔥
+    </p>
+    <p style="font-weight:bold; margin-top:0;">
+      [Your Label Name] — Always listening.
+    </p>
+  </section>
+</div>
 
 </body>
 </html>
