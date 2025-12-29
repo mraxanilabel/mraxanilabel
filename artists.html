@@ -1,31 +1,135 @@
-<section id="demo-policy" style="font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; color: #333; text-align: center;">
-  <h2>Demo Submission Policy</h2>
-  
-  <p>Thank you for your interest in submitting your music to <strong>[Your Label Name]</strong>!</p>
-  
-  <p>We are a young and passionate independent record label, always on the lookout for new sounds and fresh talent. We <strong>welcome demo submissions from artists and producers of all levels</strong> and are committed to listening to <strong>all material we receive</strong>.</p>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etichetta Discografica - Artisti</title>
+  <style>
+    /* RESET */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #fff; color: #111; }
 
-  <h3>What We Are Looking For</h3>
-  <p>We are open to demos in all genres that fit the artistic vision of our label. We encourage creativity and originality — even if your style doesn’t perfectly match our current roster.</p>
+    /* Header con logo Home */
+    header {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+    }
 
-  <h3>How to Submit</h3>
-  <p>Please send your demo by email to: <a href="mailto:demo@[yourlabel].com">demo@[yourlabel].com</a></p>
-  <p>In your email, include:</p>
-  <ul style="list-style-position: inside; display: inline-block; text-align: left; margin: 0 auto;">
-    <li>A private streaming link (SoundCloud, Dropbox, Google Drive, etc.) or downloadable link to your tracks</li>
-    <li>A short artist bio or press kit</li>
-    <li>Links to your social media and music platforms (if available)</li>
-  </ul>
+    header a {
+      display: inline-block;
+    }
 
-  <h3>Review Process</h3>
-  <p>We <strong>listen to every demo we receive</strong>, but please understand that response times may vary. If your music fits what we’re looking for and we see a potential collaboration, we will contact you to discuss next steps.</p>
+    header img {
+      height: 80px; /* altezza logo */
+      width: auto;
+      cursor: pointer;
+    }
 
-  <h3>Important Notes</h3>
-  <ul style="list-style-position: inside; display: inline-block; text-align: left; margin: 0 auto;">
-    <li>Submitting your demo does <strong>not</strong> guarantee a contract or release.</li>
-    <li>By submitting, you affirm that you own all rights to the music you send and that it is your original work.</li>
-  </ul>
+    /* Sezione Artisti */
+    #artisti {
+      padding: 20px;
+    }
 
-  <p>We look forward to hearing what you’ve been working on! 🎧🔥</p>
-  <p style="font-weight: bold;">[Your Label Name] — Always listening.</p>
+    /* Griglia artisti 3 colonne */
+    .grid-artisti {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 colonne fisse */
+      gap: 10px;              /* piccolo spazio tra le immagini */
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .artista-card {
+      position: relative; /* necessario per testo sovrapposto */
+      overflow: hidden;
+    }
+
+    .artista-card img {
+      width: 100%;
+      height: 350px;         /* immagini grandi */
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+
+    .artista-card img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Nome artista visibile solo al passaggio del mouse */
+    .artista-card p {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px 0;
+      margin: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      font-weight: 500;
+      font-size: 1rem;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .artista-card:hover p {
+      opacity: 1;
+    }
+
+    /* Footer semplice */
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.9rem;
+      color: #777;
+      border-top: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <!-- Logo cliccabile come Home -->
+  <a href="index.html">
+    <img src="images/logo.png" alt="Logo Etichetta">
+  </a>
+</header>
+
+<section id="artisti">
+  <div class="grid-artisti">
+    <div class="artista-card">
+      <img src="images/andrearuggeri.png" alt="Artista 1">
+      <p>Artista 1</p>
+    </div>
+    <div class="artista-card">
+      <img src="images/eliacasu.png" alt="Artista 2">
+      <p>Artista 2</p>
+    </div>
+    <div class="artista-card">
+      <img src="images/claudiomelis.png" alt="Artista 3">
+      <p>Artista 3</p>
+    </div>
+    <div class="artista-card">
+      <img src="images/antoniopinna.png" alt="Artista 4">
+      <p>Artista 4</p>
+    </div>
+    <div class="artista-card">
+      <img src="images/sebastianodessanay.png" alt="Artista 5">
+      <p>Artista 5</p>
+    </div>
+    <div class="artista-card">
+      <img src="images/artista6.jpg" alt="Artista 6">
+      <p>Artista 6</p>
+    </div>
+  </div>
 </section>
+
+<footer>
+  &copy; 2025 Etichetta Discografica
+</footer>
+
+</body>
+</html>
