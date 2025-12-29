@@ -36,31 +36,26 @@
     #artisti { padding: 40px 20px; text-align: center; }
     #artisti h2 { font-size: 1.8rem; font-weight: 400; margin-bottom: 25px; }
 
-    /* Griglia artisti */
-    .grid-artisti {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
-      max-width: 1200px;
-      margin: auto;
-    }
+ /* Griglia artisti */
+.grid-artisti {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* colonne più grandi */
+  gap: 24px; /* spazio tra le immagini */
+  max-width: 1400px; /* aumenta larghezza massima della griglia */
+  margin: auto;
+}
 
-    .artista-card {
-      overflow: hidden;
-      border-radius: 6px;
-    }
+.artista-card img {
+  width: 100%;
+  height: 250px;       /* aumenta l’altezza delle immagini */
+  object-fit: cover;   /* ritaglia senza deformare */
+  display: block;
+  transition: transform 0.25s ease;
+}
 
-    .artista-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.25s ease;
-    }
-
-    .artista-card img:hover {
-      transform: scale(1.05);
-    }
+.artista-card img:hover {
+  transform: scale(1.05);
+}
 
     .artista-card p {
       margin-top: 8px;
