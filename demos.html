@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mraxani Label - Demo Policy</title>
+<title>[Your Label Name] - Demo Policy</title>
 <style>
   /* Reset margini e padding globali */
   * {
@@ -18,13 +18,14 @@
     color: #333;
   }
 
-  /* Header con logo in alto a sinistra */
-  header {
-    padding: 20px 0 20px 20px; /* distanza dall'alto e lato sinistro */
+  /* Logo cliccabile senza header extra */
+  .logo-link {
+    display: inline-block;
+    margin: 20px 0 0 20px; /* distanza dal bordo superiore e sinistro */
   }
 
-  header a img {
-    height: 80px; /* dimensione logo, puoi regolarla */
+  .logo-link img {
+    height: 80px; /* puoi modificare la dimensione */
     width: auto;
     display: block;
   }
@@ -59,12 +60,10 @@
 </head>
 <body>
 
-<!-- Header con logo cliccabile -->
-<header>
-  <a href="index.html">
-    <img src="images/logo.png" alt="[Your Label Name] Logo">
-  </a>
-</header>
+<!-- Logo cliccabile solo sulla sua area -->
+<a href="index.html" class="logo-link">
+  <img src="images/logo.png" alt="[Your Label Name] Logo">
+</a>
 
 <!-- Demo Policy Section -->
 <section id="demo-policy">
@@ -96,7 +95,7 @@
   </ul>
 
   <p>We look forward to hearing what you’ve been working on! 🎧🔥</p>
-  <p style="font-weight: bold;">Mraxani Label — Always listening.</p>
+  <p style="font-weight: bold;">[Your Label Name] — Always listening.</p>
 </section>
 
 </body>
