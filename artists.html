@@ -1,46 +1,42 @@
-<section id="artists">
-  <h2>Artists</h2>
-  <div class="grid-artisti">
-    <div class="artista-card">
-      <img src="images/eliacasu.png" alt="Artista 1">
-      <p>Artista 1</p>
-    </div>
-    <div class="artista-card">
-      <img src="images/andrearuggeri.png" alt="Artista 2">
-      <p>Artista 2</p>
-    </div>
-    <div class="artista-card">
-      <img src="images/sebastianodessanay.png" alt="Artista 3">
-      <p>Artista 3</p>
-    </div>
-    <div class="artista-card">
-      <img src="images/claudiomelis.png" alt="Artista 4">
-      <p>Artista 4</p>
-    </div>
-        <div class="artista-card">
-      <img src="images/antoniopinna.png" alt="Artista 5">
-      <p>Artista 5</p>
-    </div>
-    <!-- Aggiungi altri artisti nello stesso formato -->
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artisti</title>
+  <title>Etichetta Discografica - Artisti</title>
   <style>
-    /* CSS per la griglia artisti */
-    #artisti {
-      padding: 40px 20px;
+    /* RESET */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #fff; color: #111; }
+
+    /* Header e logo */
+    header { text-align: center; padding: 10px 0; }
+    header img { height: 100px; width: auto; }
+
+    /* Pulsante Home */
+    .home-button {
+      display: block;
+      width: 120px;
+      margin: 20px auto;
+      padding: 10px 0;
       text-align: center;
+      background-color: #dddddd;
+      color: #111;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      transition: background-color 0.25s ease;
+    }
+    .home-button:hover {
+      background-color: #cccccc;
     }
 
-    #artisti h2 {
-      font-size: 1.8rem;
-      font-weight: 400;
-      margin-bottom: 25px;
-    }
+    /* Sezione Artisti */
+    #artisti { padding: 40px 20px; text-align: center; }
+    #artisti h2 { font-size: 1.8rem; font-weight: 400; margin-bottom: 25px; }
 
+    /* Griglia artisti */
     .grid-artisti {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -65,5 +61,58 @@
     .artista-card img:hover {
       transform: scale(1.05);
     }
+
+    .artista-card p {
+      margin-top: 8px;
+      font-weight: 500;
+      color: #444;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    /* Footer */
+    footer { text-align: center; padding: 25px 0; font-size: 0.9rem; color: #777; border-top: 1px solid #eee; }
+
   </style>
 </head>
+<body>
+
+<header>
+  <img src="images/logo.png" alt="Logo Etichetta">
+</header>
+
+<a href="index.html" class="home-button">Home</a>
+
+<section id="artisti">
+  <h2>Artisti</h2>
+  <div class="grid-artisti">
+    <div class="artista-card">
+      <img src="images/eliacasu.png" alt="Artista 1">
+      <p>Artista 1</p>
+    </div>
+    <div class="artista-card">
+      <img src="images/andrearuggeri.png" alt="Artista 2">
+      <p>Artista 2</p>
+    </div>
+    <div class="artista-card">
+      <img src="images/claudiomelis.png" alt="Artista 3">
+      <p>Artista 3</p>
+    </div>
+    <div class="artista-card">
+      <img src="images/sebastianodessanay.png" alt="Artista 4">
+      <p>Artista 4</p>
+    </div>
+      <div class="artista-card">
+      <img src="images/antoniopinna.png" alt="Artista 5">
+      <p>Artista 5</p>
+    </div>
+    <!-- Aggiungi altri artisti nello stesso formato -->
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Etichetta Discografica
+</footer>
+
+</body>
+</html>
