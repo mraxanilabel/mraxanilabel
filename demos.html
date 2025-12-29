@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>[Your Label Name] - Demo Policy</title>
 <style>
-  /* Reset margini e padding globali */
-  * {
+  /* Reset globale */
+  html, body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    height: 100%;
   }
 
   body {
@@ -18,14 +18,14 @@
     color: #333;
   }
 
-  /* Logo cliccabile senza header extra */
+  /* Logo cliccabile senza spazio extra */
   .logo-link {
     display: inline-block;
     margin: 20px 0 0 20px; /* distanza dal bordo superiore e sinistro */
   }
 
   .logo-link img {
-    height: 80px; /* puoi modificare la dimensione */
+    height: 80px; /* dimensione logo */
     width: auto;
     display: block;
   }
@@ -33,13 +33,13 @@
   /* Sezione Demo Policy centrata */
   #demo-policy {
     max-width: 800px;
-    margin: 40px auto; /* centra la sezione nella pagina */
+    margin: 20px auto; /* distanza dal logo e centro pagina */
     padding: 20px;
-    text-align: center; /* centra titoli e paragrafi */
+    text-align: center; /* centra testi e titoli */
     line-height: 1.6;
   }
 
-  /* Liste centrate ma testi interni allineati a sinistra */
+  /* Liste centrate ma testo interno allineato a sinistra */
   #demo-policy ul {
     list-style-position: inside;
     display: inline-block;
