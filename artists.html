@@ -21,7 +21,7 @@
     }
 
     header img {
-      height: 80px;        /* altezza logo */
+      height: 80px; /* altezza logo */
       width: auto;
       cursor: pointer;
     }
@@ -31,52 +31,53 @@
       padding: 20px;
     }
 
-    /* Griglia artisti full-width */
+    /* Griglia artisti 3 colonne */
     .grid-artisti {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 0;                 /* nessuno spazio tra immagini */
+      grid-template-columns: repeat(3, 1fr); /* 3 colonne fisse */
+      gap: 10px;              /* piccolo spazio tra le immagini */
       width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .artista-card {
-  position: relative; /* necessario per posizionare il testo sopra l'immagine */
-  overflow: hidden;
-}
+      position: relative; /* necessario per testo sovrapposto */
+      overflow: hidden;
+    }
 
-.artista-card img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.25s ease;
-}
+    .artista-card img {
+      width: 100%;
+      height: 350px;         /* immagini grandi */
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease;
+    }
 
-.artista-card img:hover {
-  transform: scale(1.05);
-}
+    .artista-card img:hover {
+      transform: scale(1.05);
+    }
 
-/* Nome artista sovrapposto, invisibile di default */
-.artista-card p {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px 0;
-  margin: 0;
-  background: rgba(0, 0, 0, 0.6); /* sfondo semi-trasparente */
-  color: #fff;
-  font-weight: 500;
-  font-size: 1rem;
-  text-align: center;
-  opacity: 0;              /* invisibile di default */
-  transition: opacity 0.3s ease;
-}
+    /* Nome artista visibile solo al passaggio del mouse */
+    .artista-card p {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px 0;
+      margin: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      font-weight: 500;
+      font-size: 1rem;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
 
-/* Mostra il nome al passaggio del mouse */
-.artista-card:hover p {
-  opacity: 1;
-}
+    .artista-card:hover p {
+      opacity: 1;
+    }
 
     /* Footer semplice */
     footer {
@@ -108,18 +109,21 @@
       <p>Artista 2</p>
     </div>
     <div class="artista-card">
-      <img src="images/sebastianodessanay.png" alt="Artista 3">
+      <img src="images/claudiomelis.png" alt="Artista 3">
       <p>Artista 3</p>
     </div>
     <div class="artista-card">
-      <img src="images/claudiomelis.png" alt="Artista 4">
+      <img src="images/sebastianodessanay.png" alt="Artista 4">
       <p>Artista 4</p>
     </div>
-     <div class="artista-card">
+    <div class="artista-card">
       <img src="images/antoniopinna.png" alt="Artista 5">
-      <p>Artista 4</p>
+      <p>Artista 5</p>
     </div>
-    <!-- Aggiungi altri artisti nello stesso formato -->
+    <div class="artista-card">
+      <img src="images/elsamartin.png" alt="Artista 6">
+      <p>Artista 6</p>
+    </div>
   </div>
 </section>
 
