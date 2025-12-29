@@ -1,62 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Your Label Name] - Demo Policy</title>
 <style>
-  /* reset minimo */
-  .demo-policy,
-  .demo-policy * {
+  /* Reset margini e padding globali */
+  * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
   }
 
-  /* logo */
-  .logo-wrapper {
-    position: absolute;
-    top: 20px;
-    left: 0;
-    padding: 15px;
-    z-index: 9999;
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
   }
 
-  .logo-wrapper img {
-    height: 80px;
+  /* Header con logo in alto a sinistra */
+  header {
+    padding: 20px 0 20px 20px; /* distanza dall'alto e lato sinistro */
+  }
+
+  header a img {
+    height: 80px; /* dimensione logo */
     width: auto;
     display: block;
   }
 
-  /* contenuto */
-  .demo-policy-container {
-    width: 100%;
-    display: flex;
-    justify-content: center; /* centra il blocco */
-  }
-
-  .demo-policy {
+  /* Sezione Demo Policy */
+  #demo-policy {
     max-width: 800px;
-    width: 100%;
-    text-align: center !important; /* forza la centratura */
-    margin: 0 auto;
-    padding: 40px 20px;
-  }
-
-  .demo-policy ul {
-    list-style-position: inside;
-    padding: 0;
-    margin: 0 auto;
-  }
-
-  .demo-policy li {
+    margin: 40px auto; /* centra la sezione nella pagina */
+    padding: 20px;
     text-align: center;
+    line-height: 1.6;
+  }
+
+  #demo-policy ul {
+    list-style-position: inside;
+    display: inline-block;
+    text-align: left; /* mantiene le liste leggibili */
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  #demo-policy a {
+    color: #0000EE;
+    text-decoration: none;
+  }
+
+  #demo-policy a:hover {
+    text-decoration: underline;
   }
 </style>
+</head>
+<body>
 
-<!-- LOGO -->
-<div class="logo-wrapper">
+<!-- Header con logo -->
+<header>
   <a href="index.html">
-    <img src="images/logo.png" alt="[Your Label Name] Logo">
+    <img src="path/to/your-logo.png" alt="[Your Label Name] Logo">
   </a>
-</div>
+</header>
 
-<!-- CONTENUTO -->
-<div class="demo-policy-container">
-  <section id="demo-policy" style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #333; text-align: center;">
-  <h2 style="color: #222;">Demo Submission Policy</h2>
+<!-- Demo Policy Section -->
+<section id="demo-policy">
+  <h2>Demo Submission Policy</h2>
   
   <p>Thank you for your interest in submitting your music to <strong>[Your Label Name]</strong>!</p>
   
@@ -68,7 +79,7 @@
   <h3>How to Submit</h3>
   <p>Please send your demo by email to: <a href="mailto:demo@[yourlabel].com">demo@[yourlabel].com</a></p>
   <p>In your email, include:</p>
-  <ul style="list-style-position: inside; display: inline-block; text-align: left;">
+  <ul>
     <li>A private streaming link (SoundCloud, Dropbox, Google Drive, etc.) or downloadable link to your tracks</li>
     <li>A short artist bio or press kit</li>
     <li>Links to your social media and music platforms (if available)</li>
@@ -77,6 +88,15 @@
   <h3>Review Process</h3>
   <p>We <strong>listen to every demo we receive</strong>, but please understand that response times may vary. If your music fits what we’re looking for and we see a potential collaboration, we will contact you to discuss next steps.</p>
 
+  <h3>Important Notes</h3>
+  <ul>
+    <li>Submitting your demo does <strong>not</strong> guarantee a contract or release.</li>
+    <li>By submitting, you affirm that you own all rights to the music you send and that it is your original work.</li>
+  </ul>
+
   <p>We look forward to hearing what you’ve been working on! 🎧🔥</p>
   <p style="font-weight: bold;">[Your Label Name] — Always listening.</p>
 </section>
+
+</body>
+</html>
