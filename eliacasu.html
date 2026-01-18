@@ -9,31 +9,41 @@
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
+  /* RESET TOTALE */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
   body {
     font-family: 'Titillium Web', sans-serif;
     background-color: #fdfcf7;
     color: #111;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0; /* nessun padding superiore */
   }
 
-  /* HEADER con logo a sinistra */
+  /* HEADER LOGO A SINISTRA */
   header {
     display: flex;
-    align-items: center;
-    padding: 10px 20px; /* padding ridotto */
+    align-items: flex-start; /* allinea logo al bordo superiore */
+    padding: 5px 20px;       /* padding minimo */
+    margin: 0;
   }
 
   header a img {
-    height: 100px;
+    height: 80px; /* logo più compatto */
     width: auto;
+    display: block;
   }
 
-  /* Contenuto artista centrato e vicino al bordo superiore */
+  /* CONTENUTO ARTISTA */
   .artist-container {
     max-width: 700px;
-    margin: 10px auto 0 auto; /* margine ridotto sopra */
+    margin: 10px auto 0 auto; /* margine minimo sopra */
     text-align: center;
   }
 
@@ -72,7 +82,6 @@
 </head>
 <body>
 
-<!-- LOGO in alto a sinistra -->
 <header>
   <a href="index.html">
     <img src="images/logo2.png" alt="Logo Etichetta">
@@ -80,18 +89,11 @@
 </header>
 
 <div class="artist-container">
-  <!-- FOTO ARTISTA -->
   <img src="images/artista1.jpg" alt="Nome Artista" class="artista">
-
-  <!-- NOME ARTISTA -->
   <h1>Nome Artista</h1>
-
-  <!-- BIO -->
   <p class="bio">
     Breve descrizione dell’artista. Qui puoi scrivere la sua storia, genere musicale, influenze e curiosità.
   </p>
-
-  <!-- PLAYER SPOTIFY -->
   <div class="spotify-player">
     <iframe src="https://open.spotify.com/embed/artist/IL_TUO_ARTIST_ID?utm_source=generator" 
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
