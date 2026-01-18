@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Etichetta Discografica</title>
+<title>Mraxani Label</title>
 
-<!-- FONT -->
+<!-- TITILLIUM WEB -->
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
@@ -14,21 +14,16 @@
 
 body {
   font-family: 'Titillium Web', sans-serif;
-  background-color: #fdfcf7;
+  background-color: #fdfcf7; /* bianco sporco */
   color: #111;
 }
 
 /* HEADER */
-.site-header {
-  position: absolute;
-  top: 50px; /* distanza dal bordo */
-  left: 0;
-  right: 0;
+header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
-  z-index: 100;
+  padding: 50px 20px 20px;
 }
 
 /* LOGO */
@@ -37,107 +32,103 @@ body {
 }
 
 /* NAV */
-.main-nav {
+nav {
   display: flex;
   gap: 25px;
 }
 
-.main-nav a {
+nav a {
   text-decoration: none;
-  color: #111;
   font-weight: 700;
+  color: #111;
   text-transform: uppercase;
   font-size: 0.95rem;
 }
 
-.main-nav a:hover {
-  color: #555;
-}
-
-/* SOCIAL ICONS */
-.social-icons {
+/* SOCIAL */
+.social {
   display: flex;
-  gap: 14px;
+  gap: 15px;
 }
 
-.social-icons svg {
-  width: 22px;
-  height: 22px;
-  fill: none;
-  stroke: #111;
-  stroke-width: 2;
+.social a {
+  text-decoration: none;
+  font-weight: 700;
+  color: #111;
+  font-size: 0.9rem;
 }
 
-.social-icons a:hover svg {
-  stroke: #555;
-}
-
+/* SEZIONE DISCHI */
 #releases {
   display: flex;
   justify-content: center;
-  margin-top: 40px; /* distanza dalla barra */
+  margin-top: 40px;
 }
 
 .grid-releases {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 24px;
+  gap: 30px;
   max-width: 1100px;
   width: 100%;
-  margin: 0 auto;
+  padding: 0 20px;
 }
+
+/* ALBUM */
 .album {
   text-align: center;
 }
 
 .album-image {
-  position: relative;
   width: 360px;
   height: 360px;
   margin: 0 auto;
+  position: relative;
 }
 
 .album-image img {
-  position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 6px;
-  transition: opacity 0.3s ease;
-}
-
-.album-image img.back {
-  opacity: 0;
-}
-
-.album-image:hover img.front {
-  opacity: 0;
-}
-
-.album-image:hover img.back {
-  opacity: 1;
 }
 
 /* INFO */
 .album-info {
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .album-info p {
-  font-size: 0.9rem;
   margin: 4px 0;
+  font-size: 0.95rem;
 }
 
-/* PAYPAL */
-.paypal-button {
+/* PULSANTE COMPRA */
+.buy-button {
   margin-top: 10px;
+}
+
+.buy-button a {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+.buy-button a:hover {
+  background: #333;
 }
 
 /* FOOTER */
 footer {
-  margin-top: 50px;
-  padding: 25px 0;
   text-align: center;
+  margin-top: 60px;
+  padding: 25px 0;
   font-size: 0.9rem;
   color: #777;
   border-top: 1px solid #eee;
@@ -147,90 +138,64 @@ footer {
 
 <body>
 
-<header class="site-header">
-
-  <!-- LOGO -->
+<header>
   <a href="index.html" class="logo">
-    <img src="images/logo2.png" alt="Logo">
+    <img src="images/logo2.png" alt="Mraxani Label">
   </a>
 
-  <!-- NAV -->
-  <nav class="main-nav">
+  <nav>
     <a href="index.html">Home</a>
-    <a href="#mission">Mission</a>
     <a href="artists.html">Artists</a>
     <a href="demos.html">Demos</a>
     <a href="#contacts">Contacts</a>
   </nav>
 
-  <!-- SOCIAL -->
-  <div class="social-icons">
-    <a href="#" aria-label="Instagram">
-      <svg viewBox="0 0 24 24">
-        <rect x="2" y="2" width="20" height="20" rx="5"/>
-        <circle cx="12" cy="12" r="4"/>
-        <circle cx="17.5" cy="6.5" r="1.2"/>
-      </svg>
-    </a>
-
-    <a href="#" aria-label="YouTube">
-      <svg viewBox="0 0 24 24">
-        <path d="M23 12s0-4-1-5-5-1-10-1-9 0-10 1-1 5-1 5 0 4 1 5 5 1 10 1 9 0 10-1 1-5 1-5z"/>
-        <polygon points="10,8 16,12 10,16"/>
-      </svg>
-    </a>
-
-    <a href="#" aria-label="Spotify">
-      <svg viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10"/>
-        <path d="M7 10c4-1 8 0 10 1"/>
-        <path d="M7.5 13c3-.5 6 .2 8 1"/>
-        <path d="M8 16c2-.3 4 .2 6 .8"/>
-      </svg>
-    </a>
+  <div class="social">
+    <a href="#">Instagram</a>
+    <a href="#">YouTube</a>
+    <a href="#">Spotify</a>
   </div>
-
 </header>
 
-<!-- RELEASES -->
-<section class="grid-releases">
+<section id="releases">
+  <div class="grid-releases">
 
-  <div class="album">
-    <div class="album-image">
-      <img class="front" src="images/discomatadiau.png">
-      <img class="back" src="images/discomatadiauback.png">
+    <!-- DISCO 1 -->
+    <div class="album">
+      <div class="album-image">
+        <img src="images/disco1.png" alt="Disco 1">
+      </div>
+      <div class="album-info">
+        <p><strong>Artista 1</strong></p>
+        <p>Disco 1</p>
+        <p>Jazz</p>
+        <div class="buy-button">
+          <a href="#">Compra ora</a>
+        </div>
+      </div>
     </div>
-    <div class="album-info">
-      <p>Artista 1</p>
-      <p>Disco 1</p>
-      <div class="paypal-button" id="paypal-button-container-1"></div>
+
+    <!-- DISCO 2 -->
+    <div class="album">
+      <div class="album-image">
+        <img src="images/disco2.png" alt="Disco 2">
+      </div>
+      <div class="album-info">
+        <p><strong>Artista 2</strong></p>
+        <p>Disco 2</p>
+        <p>Rock</p>
+        <div class="buy-button">
+          <a href="#">Compra ora</a>
+        </div>
+      </div>
     </div>
+
   </div>
-
-  <div class="album">
-    <div class="album-image">
-      <img class="front" src="images/disco2.png">
-      <img class="back" src="images/disco2back.png">
-    </div>
-    <div class="album-info">
-      <p>Artista 2</p>
-      <p>Disco 2</p>
-      <div class="paypal-button" id="paypal-button-container-2"></div>
-    </div>
-  </div>
-
 </section>
 
 <footer>
   &copy; 2025 Mraxani Label
 </footer>
-
-<!-- PAYPAL -->
-<script src="https://www.paypal.com/sdk/js?client-id=IL_TUO_CLIENT_ID&currency=EUR"></script>
-<script>
-paypal.Buttons({}).render('#paypal-button-container-1');
-paypal.Buttons({}).render('#paypal-button-container-2');
-</script>
 
 </body>
 </html>
