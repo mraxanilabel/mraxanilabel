@@ -3,148 +3,207 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Etichetta Discografica - Artisti</title>
+<title>Etichetta Discografica</title>
 
 <!-- FONT TITILLIUM WEB -->
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
+<!-- ICONS LUCIDE -->
+<link href="https://cdn.jsdelivr.net/npm/lucide@0.258.0/dist/lucide.min.css" rel="stylesheet">
+
 <style>
   /* RESET */
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { font-family: 'Titillium Web', sans-serif; background-color: #fdfcf7; color: #111; }
 
-  body {
-    font-family: 'Titillium Web', sans-serif;
-    background-color: #fdfcf7; /* bianco sporco */
-    color: #111;
+  /* HEADER COMPLETO */
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    z-index: 10;
   }
 
-  /* Header con logo Home */
-header {
-  position: absolute; /* esce dal flusso */
-  top: 0;
-  left: 0;
-  padding: 20px 20px; /* piccolo padding */
-  z-index: 10; /* assicurati che sia sopra gli altri elementi */
-}
-
-  header a {
-    display: inline-block;
-  }
-
-  header img {
+  /* LOGO */
+  .logo img {
     height: 100px;
     width: auto;
-    cursor: pointer;
   }
 
-  /* Sezione Artisti */
-  #artisti {
-    padding: 50px;
-    max-width: 1200px;
-    margin: 0 auto;
+  /* NAV CENTRAL */
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    background-color: rgba(255,255,255,0.8);
+    padding: 12px 0;
+    flex-grow: 1;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 4px;
   }
 
-  /* Griglia artisti */
-  .grid-artisti {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  nav a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+  }
+
+  nav a:hover { color: #555; }
+
+  /* ICONS SOCIAL */
+  .social-icons {
+    display: flex;
     gap: 15px;
   }
 
-  .artista-card {
+  .social-icons a {
+    color: #111;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color 0.2s;
+  }
+
+  .social-icons a:hover { color: #555; }
+
+  /* GRIGLIA DISCHI */
+  .grid-releases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 180px auto 40px auto; /* spazio corretto per header */
+  }
+
+  .album {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .album-image {
     position: relative;
-    overflow: hidden;
+    width: 360px;
+    height: 360px;
+    margin-bottom: 10px;
   }
 
-  .artista-card a {
-    display: block; /* rende l'intera card cliccabile */
-  }
-
-  .artista-card img {
-    width: 100%;
-    aspect-ratio: 1 / 1; /* rende le immagini quadrate */
-    object-fit: cover;
-    display: block;
-    transition: transform 0.25s ease;
-  }
-
-  .artista-card img:hover {
-    transform: scale(1.05);
-  }
-
-  .artista-card p {
+  .album-image img {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    padding: 10px 0;
-    margin: 0;
-    background: rgba(0,0,0,0.6);
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: opacity 0.3s ease, transform 0.25s ease;
+  }
+
+  .album-image img.back { opacity: 0; }
+  .album-image:hover img.front { opacity: 0; transform: scale(1.05); }
+  .album-image:hover img.back { opacity: 1; transform: scale(1.05); }
+
+  /* TESTO SOTTO IL DISCO */
+  .album-info { width: 100%; text-align: center; }
+  .album-info p { margin-top: 6px; font-size: 0.9rem; color: #444; }
+  .album-info .titolo, .album-info .genere { font-weight: 500; }
+
+  /* PULSANTI PAYPAL SIMULATI */
+  .paypal-button { margin-top: 10px; }
+  .paypal-button button {
+    background-color: #111;
     color: #fff;
-    font-weight: 500;
-    font-size: 1rem;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background 0.2s;
   }
+  .paypal-button button:hover { background-color: #333; }
 
-  .artista-card:hover p {
-    opacity: 1;
-  }
-
-  /* Footer semplice */
+  /* FOOTER */
   footer {
     text-align: center;
-    padding: 20px 0;
+    padding: 25px 0;
     font-size: 0.9rem;
     color: #777;
     border-top: 1px solid #eee;
+    margin-top: 40px;
   }
-
-  /* Responsive */
-  @media (max-width: 600px) {
-    .grid-artisti {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 10px;
-    }
-  }
+  footer a { margin: 0 8px; color: #111; text-decoration: none; }
+  footer a:hover { color: #555; }
 
 </style>
 </head>
 <body>
 
 <header>
-  <a href="index.html">
-    <img src="images/logo2.png" alt="Logo Etichetta">
-  </a>
+  <div class="logo">
+    <a href="index.html"><img src="images/logo2.png" alt="Logo Etichetta"></a>
+  </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#mission">Mission</a>
+    <a href="artists.html">Artists</a>
+    <a href="demos.html">Demos</a>
+    <a href="#contacts">Contacts</a>
+  </nav>
+  <div class="social-icons">
+    <a href="#" target="_blank" title="Instagram"><i class="lucide-instagram"></i></a>
+    <a href="#" target="_blank" title="YouTube"><i class="lucide-youtube"></i></a>
+    <a href="#" target="_blank" title="Spotify"><i class="lucide-spotify"></i></a>
+  </div>
 </header>
 
-<section id="artisti">
-  <div class="grid-artisti">
-    <div class="artista-card">
-      <a href="artista-antonio.html">
-        <img src="images/antoniopinna.png" alt="Antonio Pinna">
-        <p>Antonio Pinna</p>
-      </a>
+<section id="releases" class="grid-releases">
+
+  <!-- DISCO 1 -->
+  <div class="album">
+    <div class="album-image">
+      <img class="front" src="images/discomatadiau.png" alt="Disco 1">
+      <img class="back" src="images/discomatadiauback.png" alt="Disco 1 Retro">
     </div>
-    <div class="artista-card">
-      <a href="eliacasu.html">
-        <img src="images/eliacasu.png" alt="Elia Casu">
-        <p>Elia Casu</p>
-      </a>
-    </div>
-    <div class="artista-card">
-      <a href="artista-claudio.html">
-        <img src="images/claudiomelis.png" alt="Claudio Melis">
-        <p>Claudio Melis</p>
-      </a>
+    <div class="album-info">
+      <p class="artista">Artista 1</p>
+      <p class="titolo">Disco 1</p>
+      <p class="genere">Jazz</p>
+      <div class="paypal-button"><button>Compra ora</button></div>
     </div>
   </div>
+
+  <!-- DISCO 2 -->
+  <div class="album">
+    <div class="album-image">
+      <img class="front" src="images/disco2.png" alt="Disco 2">
+      <img class="back" src="images/disco2-back.png" alt="Disco 2 Retro">
+    </div>
+    <div class="album-info">
+      <p class="artista">Artista 2</p>
+      <p class="titolo">Disco 2</p>
+      <p class="genere">Rock</p>
+      <div class="paypal-button"><button>Compra ora</button></div>
+    </div>
+  </div>
+
 </section>
 
 <footer>
-  &copy; 2025 Etichetta Discografica
+  &copy; 2025 Mraxani Label | <a href="#">Instagram</a> | <a href="#">Facebook</a>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.258.0/dist/lucide.min.js"></script>
+<script>
+  lucide.createIcons();
+</script>
 
 </body>
 </html>
