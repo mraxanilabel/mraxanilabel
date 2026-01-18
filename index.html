@@ -84,6 +84,34 @@
   .album-info .titolo, .album-info .genere {
     font-weight: 500;
   }
+  .album-image {
+  position: relative;
+  width: 360px;  /* stessa larghezza delle immagini principali */
+  height: 360px; /* stessa altezza */
+}
+
+.album-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: opacity 0.3s ease;
+}
+
+.album-image img.back {
+  opacity: 0; /* nascosta di default */
+}
+
+.album-image:hover img.front {
+  opacity: 0; /* nasconde l’immagine principale */
+}
+
+.album-image:hover img.back {
+  opacity: 1; /* mostra l’immagine secondaria */
+}
 
   /* CONTENITORE PAYPAL */
   .paypal-button {
