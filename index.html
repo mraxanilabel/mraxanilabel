@@ -19,15 +19,16 @@
 header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  padding: 20px 20px; /* NIENTE padding sopra */
+  align-items: center;
+  padding: 0 20px; /* solo padding orizzontale */
 }
 
   /* LOGO */
 .logo img {
   height: 100px;
-  margin-top: 0;
+  width: auto;
   display: block;
+  margin: 0; /* niente margine sopra */
 }
 
   /* SOCIAL ICONS */
@@ -54,7 +55,8 @@ nav {
   gap: 25px;
   padding: 12px 0;
   background-color: rgba(255,255,255,0.8);
-  margin-top: 10px; /* QUI decidi tu quanto */
+  margin-top: 50px;  /* <- distanza dal bordo superiore */
+  z-index: 5;
 }
 
   nav a {
