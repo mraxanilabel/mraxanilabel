@@ -30,7 +30,7 @@
     header {
       display: flex;
       align-items: center;
-      justify-content: space-between; /* logo a sinistra, icone a destra */
+      justify-content: space-between;
       padding: 10px 20px;
       background-color: transparent;
     }
@@ -48,7 +48,7 @@
     }
 
     .header-social a {
-      color: #111; /* icone nere */
+      color: #111;       /* icone nere */
       font-size: 1.2rem; /* piccolo */
       text-decoration: none;
       transition: color 0.2s;
@@ -58,7 +58,7 @@
       color: #555;
     }
 
-    /* NAV (sotto header) */
+    /* NAV */
     nav {
       display: flex;
       justify-content: center;
@@ -71,7 +71,7 @@
     nav a {
       text-decoration: none;
       color: #111;
-      font-weight: 700;
+      font-weight: 700; /* grassetto */
       font-size: 0.95rem;
       text-transform: uppercase;
     }
@@ -80,12 +80,12 @@
       color: #555;
     }
 
-    /* SEZIONE DISCHI */
+    /* GRIGLIA DISCHI */
     .grid-releases {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, 360px);
       gap: 24px;
-      max-width: 1000px;
+      justify-content: center;
       margin: 40px auto;
     }
 
@@ -93,13 +93,13 @@
       text-align: center;
     }
 
-.album img {
-  width: 360px;       /* larghezza fissa */
-  height: 360px;      /* altezza fissa */
-  object-fit: cover;  /* mantiene il riempimento senza deformare */
-  border-radius: 6px;
-  transition: transform 0.25s ease;
-}
+    .album img {
+      width: 360px;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 6px;
+      transition: transform 0.25s ease;
+    }
 
     .album img:hover {
       transform: scale(1.05);
@@ -126,12 +126,10 @@
       margin-bottom: 4px;
     }
 
-    .album-info .prezzo {
-      font-weight: 500;
-      color: #111;
-      border-bottom: 1px dashed #999;
-      padding-bottom: 3px;
-      margin-bottom: 4px;
+    /* PULSANTE PAYPAL */
+    .paypal-button {
+      margin-top: 8px;
+      text-align: center;
     }
 
     /* FOOTER */
@@ -154,16 +152,15 @@
     footer a:hover {
       color: #555;
     }
+
   </style>
 </head>
 <body>
 
   <!-- HEADER -->
   <header>
-    <!-- LOGO A SINISTRA -->
-    <img src="images/logo2.png" alt="Logo Etichetta">
+    <img src="images/logo.png" alt="Logo Etichetta">
 
-    <!-- ICONE SOCIAL A DESTRA -->
     <div class="header-social">
       <a href="https://instagram.com/tuoprofilo" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="https://youtube.com/tuocanale" target="_blank"><i class="fab fa-youtube"></i></a>
@@ -183,24 +180,42 @@
   <!-- RELEASES -->
   <section id="releases">
     <div class="grid-releases">
+      <!-- DISCO 1 -->
       <div class="album">
-        <img src="images/discomatadiau.png" alt="Disco 1">
+        <img src="images/disco1.png" alt="Disco 1">
         <div class="album-info">
-          <p class="artista">ELIA CASU | ANTONIO PINNA</p>
-          <p class="titolo">MATADIAU</p>
-          <p class="genere">EXPERIMENTAL</p>
-          <p class="prezzo">€19,99</p>
+          <p class="artista">Artista 1</p>
+          <p class="titolo">Disco 1</p>
+          <p class="genere">Jazz</p>
+          <div class="paypal-button">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+              <input type="hidden" name="cmd" value="_s-xclick">
+              <input type="hidden" name="hosted_button_id" value="IL_TUO_CODICE_PULSANTE">
+              <input type="image" src="https://www.paypalobjects.com/it_IT/IT/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="Acquista con PayPal">
+              <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+            </form>
+          </div>
         </div>
       </div>
+
+      <!-- DISCO 2 -->
       <div class="album">
-        <img src="images/disco2.png" alt="Disco 2">
+        <img src="images/disco2.jpg" alt="Disco 2">
         <div class="album-info">
-          <p class="artista">CLAUDIO MELIS</p>
-          <p class="titolo">POEMS</p>
-          <p class="genere">EXPERIMENTAL</p>
-          <p class="prezzo">€17,50</p>
+          <p class="artista">Artista 2</p>
+          <p class="titolo">Disco 2</p>
+          <p class="genere">Rock</p>
+          <div class="paypal-button">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+              <input type="hidden" name="cmd" value="_s-xclick">
+              <input type="hidden" name="hosted_button_id" value="IL_TUO_CODICE_PULSANTE">
+              <input type="image" src="https://www.paypalobjects.com/it_IT/IT/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="Acquista con PayPal">
+              <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+            </form>
+          </div>
         </div>
       </div>
+
     </div>
   </section>
 
