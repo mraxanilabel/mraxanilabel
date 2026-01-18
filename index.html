@@ -36,7 +36,7 @@
     padding: 12px 0;
     background-color: rgba(255,255,255,0.8);
     position: relative;
-    margin-top: 0;
+    top: 50px; /* distanza dal bordo superiore */
     z-index: 5;
   }
 
@@ -58,25 +58,48 @@
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     gap: 24px;
     max-width: 1000px;
-    margin: 140px auto 40px auto; /* spazio per logo + nav */
+    margin: 220px auto 40px auto; /* spazio per logo + nav */
   }
 
   .album {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .album img {
+  /* IMMAGINI HOVER */
+  .album-image {
+    position: relative;
     width: 360px;
     height: 360px;
-    object-fit: cover;
-    border-radius: 6px;
-    transition: transform 0.25s ease;
+    margin-bottom: 10px;
   }
 
-  .album img:hover { transform: scale(1.05); }
+  .album-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: opacity 0.3s ease, transform 0.25s ease;
+  }
+
+  .album-image img.back { opacity: 0; }
+
+  .album-image:hover img.front { opacity: 0; transform: scale(1.05); }
+  .album-image:hover img.back { opacity: 1; transform: scale(1.05); }
+
+  /* TESTO SOTTO IL DISCO */
+  .album-info {
+    width: 100%;
+    text-align: center;
+  }
 
   .album-info p {
-    margin-top: 8px;
+    margin-top: 6px;
     font-size: 0.9rem;
     color: #444;
   }
@@ -84,38 +107,12 @@
   .album-info .titolo, .album-info .genere {
     font-weight: 500;
   }
-  .album-image {
-  position: relative;
-  width: 360px;  /* stessa larghezza delle immagini principali */
-  height: 360px; /* stessa altezza */
-}
 
-.album-image img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 6px;
-  transition: opacity 0.3s ease;
-}
-
-.album-image img.back {
-  opacity: 0; /* nascosta di default */
-}
-
-.album-image:hover img.front {
-  opacity: 0; /* nasconde l’immagine principale */
-}
-
-.album-image:hover img.back {
-  opacity: 1; /* mostra l’immagine secondaria */
-}
-
-  /* CONTENITORE PAYPAL */
+  /* PAYPAL */
   .paypal-button {
     margin-top: 10px;
+    display: inline-block;
+    width: 100%;
   }
 
   /* FOOTER */
@@ -130,6 +127,7 @@
 
   footer a { margin: 0 8px; color: #111; text-decoration: none; }
   footer a:hover { color: #555; }
+
 </style>
 </head>
 <body>
@@ -154,22 +152,25 @@
 <section id="releases" class="grid-releases">
 
   <!-- DISCO 1 -->
-<div class="album">
-  <div class="album-image">
-    <img class="front" src="images/discomatadiau.png" alt="Disco 1">
-    <img class="back" src="images/discomatadiauback.png" alt="Disco 1 Retro">
-  </div>
-  <div class="album-info">
-    <p class="artista">Artista 1</p>
-    <p class="titolo">Disco 1</p>
-    <p class="genere">Jazz</p>
-    <div class="paypal-button" id="paypal-button-container-1"></div>
-  </div>
+  <div class="album">
+    <div class="album-image">
+      <img class="front" src="images/discomatadiau.png" alt="Disco 1">
+      <img class="back" src="images/discomatadiauback.png" alt="Disco 1 Retro">
+    </div>
+    <div class="album-info">
+      <p class="artista">Artista 1</p>
+      <p class="titolo">Disco 1</p>
+      <p class="genere">Jazz</p>
+      <div class="paypal-button" id="paypal-button-container-1"></div>
+    </div>
   </div>
 
   <!-- DISCO 2 -->
   <div class="album">
-    <img src="images/disco2.png" alt="Disco 2">
+    <div class="album-image">
+      <img class="front" src="images/disco2.png" alt="Disco 2">
+      <img class="back" src="images/disco2-back.png" alt="Disco 2 Retro">
+    </div>
     <div class="album-info">
       <p class="artista">Artista 2</p>
       <p class="titolo">Disco 2</p>
@@ -190,5 +191,19 @@
 <script>
   // Pulsante Disco 1
   paypal.Buttons({
-      style: { layout: 'vertical', color:'black', shape:'rect', label:'buynow' },
-      createOrder
+    style: { layout: 'vertical', color:'black', shape:'rect', label:'buynow' },
+    createOrder: function(data, actions) {
+      return actions.order.create({
+        purchase_units: [{ amount: { value: '19.99' } }]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(details) {
+        alert('Acquisto completato da ' + details.payer.name.given_name);
+      });
+    }
+  }).render('#paypal-button-container-1');
+
+  // Pulsante Disco 2
+  paypal.Buttons({
+    style: { layout: 'vertical', color:'black', sha
