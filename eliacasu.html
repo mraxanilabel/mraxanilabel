@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artista - Nome Artista</title>
+
+<!-- FONT TITILLIUM WEB -->
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #fdfcf7;
+    color: #111;
+    line-height: 1.6;
+    padding: 20px;
+  }
+
+  .artist-container {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .artist-container img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  p.bio {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 25px;
+  }
+
+  /* STILE PLAYER SPOTIFY */
+  .spotify-player {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+
+  iframe {
+    width: 100%;
+    height: 80px; /* altezza standard del mini player */
+    border: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="artist-container">
+  <!-- FOTO ARTISTA -->
+  <img src="images/artista1.jpg" alt="Nome Artista">
+
+  <!-- NOME ARTISTA -->
+  <h1>Nome Artista</h1>
+
+  <!-- BIO -->
+  <p class="bio">
+    Breve descrizione dell’artista. Qui puoi scrivere la sua storia, genere musicale, influenze e curiosità.
+  </p>
+
+  <!-- SPOTIFY PLAYER -->
+  <div class="spotify-player">
+    <iframe src="https://open.spotify.com/embed/artist/ID_ARTISTA?utm_source=generator" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy">
+    </iframe>
+  </div>
+</div>
+
+</body>
+</html>
