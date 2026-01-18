@@ -9,18 +9,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-  /* RESET TOTALE */
+  /* RESET COMPLETO */
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-
   html, body {
     height: 100%;
-  }
-
-  body {
+    margin: 0;
+    padding: 0;
     font-family: 'Titillium Web', sans-serif;
     background-color: #fdfcf7;
     color: #111;
@@ -28,22 +26,24 @@
 
   /* HEADER LOGO A SINISTRA */
   header {
+    position: relative; /* non spinge il contenuto */
     display: flex;
-    align-items: flex-start; /* allinea logo al bordo superiore */
-    padding: 5px 20px;       /* padding minimo */
+    align-items: flex-start;
+    padding: 5px 20px; /* minore possibile */
     margin: 0;
   }
 
   header a img {
-    height: 80px; /* logo più compatto */
+    height: 80px; 
     width: auto;
     display: block;
   }
 
-  /* CONTENUTO ARTISTA */
+  /* CONTENUTO ARTISTA INIZIA SUBITO DOPO LOGO */
   .artist-container {
     max-width: 700px;
-    margin: 10px auto 0 auto; /* margine minimo sopra */
+    margin: 0 auto; /* nessun margine superiore */
+    padding-top: 10px; /* piccolo distacco dal logo */
     text-align: center;
   }
 
@@ -90,14 +90,14 @@
 
 <div class="artist-container">
   <img src="images/artista1.jpg" alt="Nome Artista" class="artista">
-  <h1>ELIA CASU</h1>
+  <h1>Nome Artista</h1>
   <p class="bio">
-   Elia Casu is an Italian musician and composer whose work moves between guitar, electronics, and soundscapes. 
-    With roots in jazz and improvisation, he explores organic textures and deep grooves, creating music that balances introspection and motion. 
-    His sound blends melodic sensitivity with electronic precision, shaping a contemporary ambient-inspired style.
+    Breve descrizione dell’artista. Qui puoi scrivere la sua storia, genere musicale, influenze e curiosità.
   </p>
   <div class="spotify-player">
-   <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/5xa03ysfcU7soHPxI7lJx9?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe src="https://open.spotify.com/embed/artist/IL_TUO_ARTIST_ID?utm_source=generator" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+    </iframe>
   </div>
 </div>
 
