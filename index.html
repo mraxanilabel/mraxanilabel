@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Etichetta Discografica</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etichetta Discografica</title>
+
+  <!-- FONT TITILLIUM WEB -->
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     /* RESET */
     * {
@@ -13,7 +21,7 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Titillium Web', sans-serif;
       background: #fff;
       color: #111;
     }
@@ -55,13 +63,13 @@
     }
 
     /* GRIGLIA DISCHI */
-.grid-releases {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 24px;
-  max-width: 1000px;
-  margin: 40px auto 0 auto; /* margine superiore 40px */
-}
+    .grid-releases {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 24px;
+      max-width: 1000px;
+      margin: 40px auto 0 auto;
+    }
 
     .album {
       text-align: center;
@@ -124,32 +132,35 @@
     footer a:hover {
       color: #555;
     }
-.album-info .titolo {
-  font-weight: 500;
-  position: relative;
-  padding-bottom: 4px;   
-  margin-bottom: 6px;    
-  border-bottom: 1px dashed #999; 
-}
 
-.album-info .genere {
-  font-style: italic;
-  color: #666;
-  position: relative;
-  padding-bottom: 4px;   
-  margin-bottom: 6px;    
-  border-bottom: 1px dashed #999; 
-}
+    .album-info .titolo {
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 4px;   
+      margin-bottom: 6px;    
+      border-bottom: 1px dashed #999; 
+    }
 
-.album-info .prezzo {
-  font-weight: 500;
-  color: #111;
-  position: relative;
-  padding-bottom: 4px;   
-  margin-bottom: 6px;    
-  border-bottom: 1px dashed #999; 
-}
+    .album-info .genere {
+      font-style: italic;
+      color: #666;
+      position: relative;
+      padding-bottom: 4px;   
+      margin-bottom: 6px;    
+      border-bottom: 1px dashed #999; 
+    }
+
+    .album-info .prezzo {
+      font-weight: 500;
+      color: #111;
+      position: relative;
+      padding-bottom: 4px;   
+      margin-bottom: 6px;    
+      border-bottom: 1px dashed #999; 
+    }
   </style>
+</head>
+
 </head>
 <body>
 
