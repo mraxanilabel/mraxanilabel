@@ -15,11 +15,11 @@
 
   /* LOGO IN ALTO A SINISTRA */
   header {
-    position: absolute; /* esce dal flusso normale */
+    position: absolute;
     top: 0;
     left: 0;
-    padding: 20px 20px;
-    z-index: 10; /* sopra tutto */
+    padding: 5px 20px;
+    z-index: 10;
   }
 
   header a img {
@@ -28,22 +28,22 @@
     display: block;
   }
 
-  /* BARRA DI NAV TRASPARENTE SOPRA IL CONTENUTO */
+  /* BARRA DI NAV TRASPARENTE */
   nav {
     display: flex;
     justify-content: center;
     gap: 25px;
     padding: 12px 0;
-    background-color: rgba(255,255,255,0.8); /* leggermente trasparente */
+    background-color: rgba(255,255,255,0.8);
     position: relative;
-    margin-top: 50px;
+    margin-top: 0;
     z-index: 5;
   }
 
   nav a {
     text-decoration: none;
     color: #111;
-    font-weight: 700; /* grassetto */
+    font-weight: 700;
     text-transform: uppercase;
     font-size: 0.95rem;
   }
@@ -55,10 +55,10 @@
   /* GRIGLIA DISCHI */
   .grid-releases {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); /* immagini grandi, fisse a 360px */
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     gap: 24px;
     max-width: 1000px;
-    margin: 140px auto 40px auto; /* margine-top per lasciare spazio a logo + nav */
+    margin: 140px auto 40px auto; /* spazio per logo + nav */
   }
 
   .album {
@@ -85,7 +85,7 @@
     font-weight: 500;
   }
 
-  /* PAYPAL BUTTON */
+  /* CONTENITORE PAYPAL */
   .paypal-button {
     margin-top: 10px;
   }
@@ -124,38 +124,29 @@
 
 <!-- RELEASES -->
 <section id="releases" class="grid-releases">
+
+  <!-- DISCO 1 -->
   <div class="album">
     <img src="images/discomatadiau.png" alt="Disco 1">
     <div class="album-info">
-      <p class="artista">MATADIAU</p>
-      <p class="titolo">ELIA CASU | ANTONIO PINNA</p>
+      <p class="artista">Artista 1</p>
+      <p class="titolo">Disco 1</p>
       <p class="genere">Jazz</p>
-      <div class="paypal-button">
-        <!-- Pulsante PayPal -->
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick">
-          <input type="hidden" name="hosted_button_id" value="IL_TUO_BUTTON_ID">
-          <input type="image" src="https://www.paypalobjects.com/it_IT/IT/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - Paga ora">
-        </form>
-      </div>
+      <div class="paypal-button" id="paypal-button-container-1"></div>
     </div>
   </div>
 
+  <!-- DISCO 2 -->
   <div class="album">
     <img src="images/disco2.png" alt="Disco 2">
     <div class="album-info">
-      <p class="artista">POEMS FOR SAX</p>
-      <p class="titolo">CLAUDIO MELIS</p>
+      <p class="artista">Artista 2</p>
+      <p class="titolo">Disco 2</p>
       <p class="genere">Rock</p>
-      <div class="paypal-button">
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick">
-          <input type="hidden" name="hosted_button_id" value="IL_TUO_BUTTON_ID">
-          <input type="image" src="https://www.paypalobjects.com/it_IT/IT/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - Paga ora">
-        </form>
-      </div>
+      <div class="paypal-button" id="paypal-button-container-2"></div>
     </div>
   </div>
+
 </section>
 
 <!-- FOOTER -->
@@ -163,5 +154,10 @@
   &copy; 2025 Mraxani Label | <a href="#">Instagram</a> | <a href="#">Facebook</a>
 </footer>
 
-</body>
-</html>
+<!-- SDK PAYPAL MODERNO -->
+<script src="https://www.paypal.com/sdk/js?client-id=IL_TUO_CLIENT_ID&currency=EUR"></script>
+<script>
+  // Pulsante Disco 1
+  paypal.Buttons({
+      style: { layout: 'vertical', color:'black', shape:'rect', label:'buynow' },
+      createOrder
