@@ -58,16 +58,18 @@
       color: #555;
     }
 
-    /* NAV */
     nav {
       display: flex;
       justify-content: center;
-      background-color: #fdfcf7; /* stesso colore dello sfondo */
+      gap: 25px;
+      background-color: #fdfcf7; /* bianco sporco, stesso dello sfondo */
       border-bottom: 1px solid #eee;
-  margin-top: 0;      /* elimina margini sopra la barra */
-  padding-top: 4px;   /* piccolo spazio interno, puoi mettere 0 se vuoi attaccata al bordo */
-  padding-bottom: 8px; /* spazio sotto la barra */
-}
+      padding: 8px 0;   /* spazio interno verticale della barra */
+      margin: 0;        /* elimina margini sopra e sotto */
+      position: sticky; /* rimane in alto quando scrolli */
+      top: 0;
+      z-index: 1000;
+    }
 
     nav a {
       text-decoration: none;
