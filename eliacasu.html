@@ -24,26 +24,25 @@
     color: #111;
   }
 
-  /* HEADER LOGO A SINISTRA */
+  /* HEADER LOGO A SINISTRA, POSIZIONE ASSOLUTA */
   header {
-    position: relative; /* non spinge il contenuto */
-    display: flex;
-    align-items: flex-start;
-    padding: 5px 20px; /* minore possibile */
-    margin: 0;
+    position: absolute; /* esce dal flusso normale */
+    top: 0;
+    left: 0;
+    padding: 5px 20px;
   }
 
   header a img {
-    height: 80px; 
+    height: 100px;
     width: auto;
     display: block;
   }
 
-  /* CONTENUTO ARTISTA INIZIA SUBITO DOPO LOGO */
+  /* CONTENUTO ARTISTA */
   .artist-container {
     max-width: 700px;
-    margin: 0 auto; /* nessun margine superiore */
-    padding-top: 10px; /* piccolo distacco dal logo */
+    margin: 0 auto;
+    padding-top: 10px; /* piccolo distacco dal bordo superiore */
     text-align: center;
   }
 
