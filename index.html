@@ -3,199 +3,237 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mraxani Label</title>
+<title>Etichetta Discografica</title>
 
-<!-- TITILLIUM WEB -->
+<!-- FONT TITILLIUM WEB -->
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
+<!-- ICONS (usiamo lucide per semplicità, ma puoi sostituire con immagini) -->
+<link href="https://cdn.jsdelivr.net/npm/lucide@0.258.0/dist/lucide.min.css" rel="stylesheet">
+
 <style>
-/* RESET */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+  /* RESET COMPLETO */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; font-family: 'Titillium Web', sans-serif; background-color: #fdfcf7; color: #111; }
 
-body {
-  font-family: 'Titillium Web', sans-serif;
-  background-color: #fdfcf7; /* bianco sporco */
-  color: #111;
-}
+  /* HEADER CON LOGO E SOCIAL */
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 10;
+  }
 
-/* HEADER */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 20px 20px;
-}
+  /* LOGO */
+  .logo img {
+    height: 100px;
+    width: auto;
+    display: block;
+  }
 
-/* LOGO */
-.logo img {
-  height: 100px;
-}
+  /* SOCIAL ICONS */
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
 
-/* NAV */
-nav {
-  display: flex;
-  gap: 25px;
-}
+  .social-icons a {
+    color: #111;
+    text-decoration: none;
+    font-size: 1.5rem; /* dimensione icone */
+    transition: color 0.2s;
+  }
 
-nav a {
-  text-decoration: none;
-  font-weight: 700;
-  color: #111;
-  text-transform: uppercase;
-  font-size: 0.95rem;
-}
+  .social-icons a:hover {
+    color: #555;
+  }
 
-/* SOCIAL */
-.social {
-  display: flex;
-  gap: 15px;
-}
+  /* BARRA DI NAV TRASPARENTE */
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 12px 0;
+    background-color: rgba(255,255,255,0.8);
+    position: relative;
+    top: 50px; /* distanza dal bordo superiore */
+    z-index: 5;
+  }
 
-.social a {
-  text-decoration: none;
-  font-weight: 700;
-  color: #111;
-  font-size: 0.9rem;
-}
+  nav a {
+    text-decoration: none;
+    color: #111;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+  }
 
-/* SEZIONE DISCHI */
-#releases {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
+  nav a:hover {
+    color: #555;
+  }
 
-.grid-releases {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 30px;
-  max-width: 1100px;
-  width: 100%;
-  padding: 0 20px;
-}
+  /* GRIGLIA DISCHI */
+  .grid-releases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 80px auto 40px auto; /* spazio ridotto sopra i dischi */
+  }
 
-/* ALBUM */
-.album {
-  text-align: center;
-}
+  .album {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.album-image {
-  width: 360px;
-  height: 360px;
-  margin: 0 auto;
-  position: relative;
-}
+  /* IMMAGINI HOVER */
+  .album-image {
+    position: relative;
+    width: 360px;
+    height: 360px;
+    margin-bottom: 10px;
+  }
 
-.album-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 6px;
-}
+  .album-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: opacity 0.3s ease, transform 0.25s ease;
+  }
 
-/* INFO */
-.album-info {
-  margin-top: 10px;
-}
+  .album-image img.back { opacity: 0; }
 
-.album-info p {
-  margin: 4px 0;
-  font-size: 0.95rem;
-}
+  .album-image:hover img.front { opacity: 0; transform: scale(1.05); }
+  .album-image:hover img.back { opacity: 1; transform: scale(1.05); }
 
-/* PULSANTE COMPRA */
-.buy-button {
-  margin-top: 10px;
-}
+  /* TESTO SOTTO IL DISCO */
+  .album-info {
+    width: 100%;
+    text-align: center;
+  }
 
-.buy-button a {
-  display: inline-block;
-  padding: 10px 18px;
-  background: #000;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  border-radius: 4px;
-}
+  .album-info p {
+    margin-top: 6px;
+    font-size: 0.9rem;
+    color: #444;
+  }
 
-.buy-button a:hover {
-  background: #333;
-}
+  .album-info .titolo, .album-info .genere {
+    font-weight: 500;
+  }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  margin-top: 60px;
-  padding: 25px 0;
-  font-size: 0.9rem;
-  color: #777;
-  border-top: 1px solid #eee;
-}
+  /* PULSANTI PAYPAL SIMULATI */
+  .paypal-button {
+    margin-top: 10px;
+  }
+
+  .paypal-button button {
+    background-color: #111;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+
+  .paypal-button button:hover {
+    background-color: #333;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9rem;
+    color: #777;
+    border-top: 1px solid #eee;
+    margin-top: 40px;
+  }
+
+  footer a { margin: 0 8px; color: #111; text-decoration: none; }
+  footer a:hover { color: #555; }
+
 </style>
 </head>
-
 <body>
 
+<!-- HEADER -->
 <header>
-  <a href="index.html" class="logo">
-    <img src="images/logo2.png" alt="Mraxani Label">
-  </a>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="artists.html">Artists</a>
-    <a href="demos.html">Demos</a>
-    <a href="#contacts">Contacts</a>
-  </nav>
-
-  <div class="social">
-    <a href="#">Instagram</a>
-    <a href="#">YouTube</a>
-    <a href="#">Spotify</a>
+  <div class="logo">
+    <a href="index.html"><img src="images/logo2.png" alt="Logo Etichetta"></a>
+  </div>
+  <div class="social-icons">
+    <a href="#" target="_blank" title="Instagram"><i class="lucide-instagram"></i></a>
+    <a href="#" target="_blank" title="YouTube"><i class="lucide-youtube"></i></a>
+    <a href="#" target="_blank" title="Spotify"><i class="lucide-spotify"></i></a>
   </div>
 </header>
 
-<section id="releases">
-  <div class="grid-releases">
+<!-- BARRA DI NAV -->
+<nav>
+  <a href="#home">Home</a>
+  <a href="#mission">Mission</a>
+  <a href="artists.html">Artists</a>
+  <a href="demos.html">Demos</a>
+  <a href="#contacts">Contacts</a>
+</nav>
 
-    <!-- DISCO 1 -->
-    <div class="album">
-      <div class="album-image">
-        <img src="images/discomatadiau.png" alt="Disco 1">
-      </div>
-      <div class="album-info">
-        <p><strong>Artista 1</strong></p>
-        <p>Disco 1</p>
-        <p>Jazz</p>
-        <div class="buy-button">
-          <a href="#">Compra ora</a>
-        </div>
-      </div>
+<!-- RELEASES -->
+<section id="releases" class="grid-releases">
+
+  <!-- DISCO 1 -->
+  <div class="album">
+    <div class="album-image">
+      <img class="front" src="images/discomatadiau.png" alt="Disco 1">
+      <img class="back" src="images/discomatadiauback.png" alt="Disco 1 Retro">
     </div>
-
-    <!-- DISCO 2 -->
-    <div class="album">
-      <div class="album-image">
-        <img src="images/disco2.png" alt="Disco 2">
-      </div>
-      <div class="album-info">
-        <p><strong>Artista 2</strong></p>
-        <p>Disco 2</p>
-        <p>Rock</p>
-        <div class="buy-button">
-          <a href="#">Compra ora</a>
-        </div>
-      </div>
+    <div class="album-info">
+      <p class="artista">Artista 1</p>
+      <p class="titolo">Disco 1</p>
+      <p class="genere">Jazz</p>
+      <div class="paypal-button"><button>Compra ora</button></div>
     </div>
-
   </div>
+
+  <!-- DISCO 2 -->
+  <div class="album">
+    <div class="album-image">
+      <img class="front" src="images/disco2.png" alt="Disco 2">
+      <img class="back" src="images/disco2-back.png" alt="Disco 2 Retro">
+    </div>
+    <div class="album-info">
+      <p class="artista">Artista 2</p>
+      <p class="titolo">Disco 2</p>
+      <p class="genere">Rock</p>
+      <div class="paypal-button"><button>Compra ora</button></div>
+    </div>
+  </div>
+
 </section>
 
+<!-- FOOTER -->
 <footer>
-  &copy; 2025 Mraxani Label
+  &copy; 2025 Mraxani Label | <a href="#">Instagram</a> | <a href="#">Facebook</a>
 </footer>
+
+<!-- LUCIDE JS -->
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.258.0/dist/lucide.min.js"></script>
+<script>
+  lucide.createIcons();
+</script>
 
 </body>
 </html>
