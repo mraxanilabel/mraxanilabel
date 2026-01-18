@@ -58,18 +58,16 @@ header {
       color: #555;
     }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      background-color: #fdfcf7; /* bianco sporco, stesso dello sfondo */
-      border-bottom: 1px solid #eee;
-      padding: 8px 0;   /* spazio interno verticale della barra */
-      margin: 0;        /* elimina margini sopra e sotto */
-      position: sticky; /* rimane in alto quando scrolli */
-      top: 0;
-      z-index: 1000;
-    }
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 8px 0;
+  background-color: transparent; /* invece di #dddddd */
+  border-bottom: 1px solid rgba(0,0,0,0.1); /* leggero bordo opzionale */
+  position: relative; /* non assoluta, resta nel flusso normale */
+  z-index: 5; /* sopra il contenuto ma sotto il logo se necessario */
+}
 
     nav a {
       text-decoration: none;
