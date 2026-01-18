@@ -11,14 +11,14 @@
 <style>
   /* RESET COMPLETO */
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { height: 100%; margin:0; padding:0; font-family: 'Titillium Web', sans-serif; background-color: #fdfcf7; color: #111; }
+  html, body { height: 100%; font-family: 'Titillium Web', sans-serif; background-color: #fdfcf7; color: #111; }
 
   /* LOGO IN ALTO A SINISTRA */
   header {
     position: absolute;
     top: 0;
     left: 0;
-    padding: 20px 20px;
+    padding: 5px 20px;
     z-index: 10;
   }
 
@@ -58,7 +58,7 @@
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     gap: 24px;
     max-width: 1000px;
-    margin: 220px auto 40px auto; /* spazio per logo + nav */
+    margin: 80px auto 40px auto; /* spazio ridotto sopra i dischi */
   }
 
   .album {
@@ -108,11 +108,24 @@
     font-weight: 500;
   }
 
-  /* PAYPAL */
+  /* PULSANTI PAYPAL SIMULATI */
   .paypal-button {
     margin-top: 10px;
-    display: inline-block;
-    width: 100%;
+  }
+
+  .paypal-button button {
+    background-color: #111;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background 0.2s;
+  }
+
+  .paypal-button button:hover {
+    background-color: #333;
   }
 
   /* FOOTER */
@@ -161,7 +174,7 @@
       <p class="artista">Artista 1</p>
       <p class="titolo">Disco 1</p>
       <p class="genere">Jazz</p>
-      <div class="paypal-button" id="paypal-button-container-1"></div>
+      <div class="paypal-button"><button>Compra ora</button></div>
     </div>
   </div>
 
@@ -175,7 +188,7 @@
       <p class="artista">Artista 2</p>
       <p class="titolo">Disco 2</p>
       <p class="genere">Rock</p>
-      <div class="paypal-button" id="paypal-button-container-2"></div>
+      <div class="paypal-button"><button>Compra ora</button></div>
     </div>
   </div>
 
@@ -186,24 +199,5 @@
   &copy; 2025 Mraxani Label | <a href="#">Instagram</a> | <a href="#">Facebook</a>
 </footer>
 
-<!-- SDK PAYPAL MODERNO -->
-<script src="https://www.paypal.com/sdk/js?client-id=AXRbxGKP3strHQa3IoIxE&currency=EUR"></script>
-<script>
-  // Pulsante Disco 1
-  paypal.Buttons({
-    style: { layout: 'vertical', color:'black', shape:'rect', label:'buynow' },
-    createOrder: function(data, actions) {
-      return actions.order.create({
-        purchase_units: [{ amount: { value: '19.99' } }]
-      });
-    },
-    onApprove: function(data, actions) {
-      return actions.order.capture().then(function(details) {
-        alert('Acquisto completato da ' + details.payer.name.given_name);
-      });
-    }
-  }).render('#paypal-button-container-1');
-
-  // Pulsante Disco 2
-  paypal.Buttons({
-    style: { layout: 'vertical', color:'black', sha
+</body>
+</html>
