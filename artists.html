@@ -18,18 +18,25 @@ body {
   color: #111;
 }
 
-/* HEADER */
-.site-header {
-  position: absolute;
-  top: 50px; /* distanza dal bordo */
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  z-index: 100;
-}
+<header class="top-bar">
+  <a href="index.html" class="logo">
+    <img src="images/logo2.png" alt="Logo">
+  </a>
+
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="#mission">Mission</a>
+    <a href="artists.html">Artists</a>
+    <a href="demos.html">Demos</a>
+    <a href="#contacts">Contacts</a>
+  </nav>
+
+  <div class="social-icons">
+    <a href="#">IG</a>
+    <a href="#">YT</a>
+    <a href="#">SP</a>
+  </div>
+</header>
 
 /* LOGO */
 .logo img {
