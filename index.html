@@ -8,24 +8,49 @@
 <!-- FONT TITILLIUM WEB -->
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
+<!-- ICONS (usiamo lucide per semplicità, ma puoi sostituire con immagini) -->
+<link href="https://cdn.jsdelivr.net/npm/lucide@0.258.0/dist/lucide.min.css" rel="stylesheet">
+
 <style>
   /* RESET COMPLETO */
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { height: 100%; font-family: 'Titillium Web', sans-serif; background-color: #fdfcf7; color: #111; }
 
-  /* LOGO IN ALTO A SINISTRA */
+  /* HEADER CON LOGO E SOCIAL */
   header {
     position: absolute;
     top: 0;
     left: 0;
-    padding: 5px 20px;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
     z-index: 10;
   }
 
-  header a img {
+  /* LOGO */
+  .logo img {
     height: 100px;
     width: auto;
     display: block;
+  }
+
+  /* SOCIAL ICONS */
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+
+  .social-icons a {
+    color: #111;
+    text-decoration: none;
+    font-size: 1.5rem; /* dimensione icone */
+    transition: color 0.2s;
+  }
+
+  .social-icons a:hover {
+    color: #555;
   }
 
   /* BARRA DI NAV TRASPARENTE */
@@ -145,11 +170,16 @@
 </head>
 <body>
 
-<!-- LOGO -->
+<!-- HEADER -->
 <header>
-  <a href="index.html">
-    <img src="images/logo2.png" alt="Logo Etichetta">
-  </a>
+  <div class="logo">
+    <a href="index.html"><img src="images/logo2.png" alt="Logo Etichetta"></a>
+  </div>
+  <div class="social-icons">
+    <a href="#" target="_blank" title="Instagram"><i class="lucide-instagram"></i></a>
+    <a href="#" target="_blank" title="YouTube"><i class="lucide-youtube"></i></a>
+    <a href="#" target="_blank" title="Spotify"><i class="lucide-spotify"></i></a>
+  </div>
 </header>
 
 <!-- BARRA DI NAV -->
@@ -196,8 +226,14 @@
 
 <!-- FOOTER -->
 <footer>
-  &copy; 2025 Mraxani Label | <a href="#">Instagram</a> | <a href="#">Facebook</a>
+  &copy; 2025 Mraxani Label
 </footer>
+
+<!-- LUCIDE JS -->
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.258.0/dist/lucide.min.js"></script>
+<script>
+  lucide.createIcons();
+</script>
 
 </body>
 </html>
