@@ -16,20 +16,19 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { height: 100%; font-family: 'Titillium Web', sans-serif; background-color: #fdfcf7; color: #111; }
 
-  /* HEADER CON LOGO E SOCIAL */
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
+  align-items: flex-start;
+  padding: 0 20px; /* NIENTE padding sopra */
 }
 
   /* LOGO */
-  .logo img {
-    height: 100px;
-    width: auto;
-    display: block;
-  }
+.logo img {
+  height: 100px;
+  margin-top: 0;
+  display: block;
+}
 
   /* SOCIAL ICONS */
   .social-icons {
@@ -49,16 +48,14 @@ header {
   }
 
   /* BARRA DI NAV TRASPARENTE */
-  nav {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    padding: 12px 0;
-    background-color: rgba(255,255,255,0.8);
-    position: relative;
-    top: 50px; /* distanza dal bordo superiore */
-    z-index: 5;
-  }
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 12px 0;
+  background-color: rgba(255,255,255,0.8);
+  margin-top: 10px; /* QUI decidi tu quanto */
+}
 
   nav a {
     text-decoration: none;
