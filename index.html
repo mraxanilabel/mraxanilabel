@@ -4,14 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Etichetta Discografica</title>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Etichetta Discografica</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- FONT TITILLIUM WEB -->
   <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME PER ICONE SOCIAL -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     /* RESET */
@@ -21,40 +19,54 @@
       box-sizing: border-box;
     }
 
-html, body {
-    height: 100%;
-    background-color: #fdfcf7; /* bianco sporco */
-    margin: 0;
-    padding: 0;
-}
+    html, body {
+      height: 100%;
+      background-color: #fdfcf7; /* bianco sporco */
+      font-family: 'Titillium Web', sans-serif;
+      color: #111;
+    }
 
-header {
-    text-align: left;   /* allinea tutto a sinistra */
-    padding: 10px 20px; /* margine interno laterale */
-}
+    /* HEADER */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* logo a sinistra, icone a destra */
+      padding: 10px 20px;
+      background-color: transparent;
+    }
 
-header img {
-    display: block;
-    margin: 0; /* rimuove il centraggio automatico */
-    height: 100px;
-    width: auto;
-}
-<header>
-  <div class="header-social">
-    <a href="https://instagram.com/tuoprofilo" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://youtube.com/tuocanale" target="_blank"><i class="fab fa-youtube"></i></a>
-    <a href="https://open.spotify.com/artist/tuoartista" target="_blank"><i class="fab fa-spotify"></i></a>
-  </div>
-    /* NAV */
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    padding: 8px 0;
-    background-color: #fdfcf7; /* stesso bianco sporco del body */
-    border-bottom: 1px solid #eee; /* puoi lasciare o cambiare colore del bordo */
-    margin-bottom: 0;
-}
+    /* LOGO */
+    header img {
+      height: 80px;
+      width: auto;
+    }
+
+    /* ICONE SOCIAL */
+    .header-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .header-social a {
+      color: #111; /* icone nere */
+      font-size: 1.2rem; /* piccolo */
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .header-social a:hover {
+      color: #555;
+    }
+
+    /* NAV (sotto header) */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 8px 0;
+      background-color: #fdfcf7; /* stesso colore dello sfondo */
+      border-bottom: 1px solid #eee;
+    }
 
     nav a {
       text-decoration: none;
@@ -68,13 +80,13 @@ nav {
       color: #555;
     }
 
-    /* GRIGLIA DISCHI */
+    /* SEZIONE DISCHI */
     .grid-releases {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 24px;
       max-width: 1000px;
-      margin: 40px auto 0 auto;
+      margin: 40px auto;
     }
 
     .album {
@@ -93,30 +105,33 @@ nav {
       transform: scale(1.05);
     }
 
-    .album p {
-      margin-top: 8px;
+    .album-info p {
+      margin-top: 6px;
       font-size: 0.9rem;
       color: #444;
     }
 
-    /* SEZIONE CONTATTI */
-    #contatti {
-      padding: 30px 20px;
-      text-align: center;
-    }
-
-    #contatti h2 {
-      margin-bottom: 15px;
-    }
-
-    #contatti a {
-      color: #111;
-      text-decoration: none;
+    .album-info .titolo {
       font-weight: 500;
+      border-bottom: 1px dashed #999;
+      padding-bottom: 3px;
+      margin-bottom: 4px;
     }
 
-    #contatti a:hover {
-      color: #555;
+    .album-info .genere {
+      font-style: italic;
+      color: #666;
+      border-bottom: 1px dashed #999;
+      padding-bottom: 3px;
+      margin-bottom: 4px;
+    }
+
+    .album-info .prezzo {
+      font-weight: 500;
+      color: #111;
+      border-bottom: 1px dashed #999;
+      padding-bottom: 3px;
+      margin-bottom: 4px;
     }
 
     /* FOOTER */
@@ -127,6 +142,7 @@ nav {
       color: #777;
       border-top: 1px solid #eee;
       margin-top: 40px;
+      background-color: transparent;
     }
 
     footer a {
@@ -138,93 +154,55 @@ nav {
     footer a:hover {
       color: #555;
     }
-
-    .album-info .titolo {
-      font-weight: 500;
-      position: relative;
-      padding-bottom: 4px;   
-      margin-bottom: 6px;    
-      border-bottom: 1px dashed #999; 
-    }
-
-    .album-info .genere {
-      font-style: italic;
-      color: #666;
-      position: relative;
-      padding-bottom: 4px;   
-      margin-bottom: 6px;    
-      border-bottom: 1px dashed #999; 
-    }
-
-    .album-info .prezzo {
-      font-weight: 500;
-      color: #111;
-      position: relative;
-      padding-bottom: 4px;   
-      margin-bottom: 6px;    
-      border-bottom: 1px dashed #999; 
-    }
   </style>
-</head>
-
 </head>
 <body>
 
-  <!-- LOGO -->
+  <!-- HEADER -->
   <header>
-    <img src="images/logo2.png" alt="Logo Etichetta">
+    <!-- LOGO A SINISTRA -->
+    <img src="images/logo.png" alt="Logo Etichetta">
+
+    <!-- ICONE SOCIAL A DESTRA -->
+    <div class="header-social">
+      <a href="https://instagram.com/tuoprofilo" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/tuocanale" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://open.spotify.com/artist/tuoartista" target="_blank"><i class="fab fa-spotify"></i></a>
+    </div>
   </header>
 
-  <!-- BARRA DI NAV -->
+  <!-- NAV -->
   <nav>
     <a href="#home">Home</a>
     <a href="#mission">Mission</a>
-        <a href="artists.html">Artists</a>
-        <a href="demos.html">Demos</a>
+    <a href="artists.html">Artists</a>
+    <a href="demos.html">Demos</a>
     <a href="#contacts">Contacts</a>
   </nav>
 
   <!-- RELEASES -->
   <section id="releases">
     <div class="grid-releases">
-  <div class="album">
-    <img src="images/disco1.png" alt="Disco 1">
-    <div class="album-info">
-      <p class="artista">Artista 1</p>
-      <p class="titolo">Disco 1</p>
-      <p class="genere">Jazz</p>
-      <p class="prezzo">€19,99</p>
-    </div>
-  </div>
-  <div class="album">
-    <img src="images/disco2.jpg" alt="Disco 2">
-    <div class="album-info">
-      <p class="artista">Artista 2</p>
-      <p class="titolo">Disco 2</p>
-      <p class="genere">Rock</p>
-      <p class="prezzo">€17,50</p>
-    </div>
-     </div>
-  <div class="album">
-    <img src="images/disco3.png" alt="Disco 2">
-    <div class="album-info">
-      <p class="artista">Artista 2</p>
-      <p class="titolo">Disco 2</p>
-      <p class="genere">Rock</p>
-      <p class="prezzo">€17,50</p>
-    </div>
-     </div>
       <div class="album">
-    <img src="images/disco4.png" alt="Disco 2">
-    <div class="album-info">
-      <p class="artista">Artista 2</p>
-      <p class="titolo">Disco 2</p>
-      <p class="genere">Rock</p>
-      <p class="prezzo">€17,50</p>
-  </div>
+        <img src="images/disco1.png" alt="Disco 1">
+        <div class="album-info">
+          <p class="artista">Artista 1</p>
+          <p class="titolo">Disco 1</p>
+          <p class="genere">Jazz</p>
+          <p class="prezzo">€19,99</p>
+        </div>
+      </div>
+      <div class="album">
+        <img src="images/disco2.jpg" alt="Disco 2">
+        <div class="album-info">
+          <p class="artista">Artista 2</p>
+          <p class="titolo">Disco 2</p>
+          <p class="genere">Rock</p>
+          <p class="prezzo">€17,50</p>
+        </div>
+      </div>
     </div>
   </section>
-
 
   <!-- FOOTER -->
   <footer>
