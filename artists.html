@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Etichetta Discografica</title>
+<title>Mraxani Label – Artists</title>
 
-<!-- FONT -->
+<!-- TITILLIUM WEB -->
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
@@ -18,25 +18,13 @@ body {
   color: #111;
 }
 
-<header class="top-bar">
-  <a href="index.html" class="logo">
-    <img src="images/logo2.png" alt="Logo">
-  </a>
-
-  <nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="#mission">Mission</a>
-    <a href="artists.html">Artists</a>
-    <a href="demos.html">Demos</a>
-    <a href="#contacts">Contacts</a>
-  </nav>
-
-  <div class="social-icons">
-    <a href="#">IG</a>
-    <a href="#">YT</a>
-    <a href="#">SP</a>
-  </div>
-</header>
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 20px 20px;
+}
 
 /* LOGO */
 .logo img {
@@ -44,102 +32,96 @@ body {
 }
 
 /* NAV */
-.main-nav {
+nav {
   display: flex;
   gap: 25px;
 }
 
-.main-nav a {
+nav a {
   text-decoration: none;
-  color: #111;
   font-weight: 700;
+  color: #111;
   text-transform: uppercase;
   font-size: 0.95rem;
 }
 
-.main-nav a:hover {
-  color: #555;
-}
-
-/* SOCIAL ICONS */
-.social-icons {
+/* SOCIAL */
+.social {
   display: flex;
-  gap: 14px;
+  gap: 15px;
 }
 
-.social-icons svg {
-  width: 22px;
-  height: 22px;
-  fill: none;
-  stroke: #111;
-  stroke-width: 2;
+.social a {
+  text-decoration: none;
+  font-weight: 700;
+  color: #111;
+  font-size: 0.9rem;
 }
 
-.social-icons a:hover svg {
-  stroke: #555;
+/* SEZIONE ARTISTI */
+#artists {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
 
-/* RELEASES */
-.grid-releases {
-  max-width: 1000px;
-  margin: 230px auto 40px auto;
+.grid-artists {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 30px;
-}
-
-.album {
-  text-align: center;
-}
-
-.album-image {
-  position: relative;
-  width: 360px;
-  height: 360px;
-  margin: 0 auto;
-}
-
-.album-image img {
-  position: absolute;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
   width: 100%;
-  height: 100%;
+  padding: 0 20px;
+}
+
+/* CARD ARTISTA */
+.artist-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.artist-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* QUADRATA */
   object-fit: cover;
-  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.artist-card:hover img {
+  transform: scale(1.05);
+}
+
+/* NOME ARTISTA */
+.artist-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-.album-image img.back {
-  opacity: 0;
-}
-
-.album-image:hover img.front {
-  opacity: 0;
-}
-
-.album-image:hover img.back {
+.artist-card:hover .artist-name {
   opacity: 1;
 }
 
-/* INFO */
-.album-info {
-  margin-top: 12px;
-}
-
-.album-info p {
-  font-size: 0.9rem;
-  margin: 4px 0;
-}
-
-/* PAYPAL */
-.paypal-button {
-  margin-top: 10px;
+/* LINK */
+.artist-card a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
 }
 
 /* FOOTER */
 footer {
-  margin-top: 50px;
-  padding: 25px 0;
   text-align: center;
+  margin-top: 60px;
+  padding: 25px 0;
   font-size: 0.9rem;
   color: #777;
   border-top: 1px solid #eee;
@@ -149,90 +131,58 @@ footer {
 
 <body>
 
-<header class="site-header">
-
-  <!-- LOGO -->
+<header>
   <a href="index.html" class="logo">
-    <img src="images/logo2.png" alt="Logo">
+    <img src="images/logo2.png" alt="Mraxani Label">
   </a>
 
-  <!-- NAV -->
-  <nav class="main-nav">
+  <nav>
     <a href="index.html">Home</a>
-    <a href="#mission">Mission</a>
     <a href="artists.html">Artists</a>
     <a href="demos.html">Demos</a>
     <a href="#contacts">Contacts</a>
   </nav>
 
-  <!-- SOCIAL -->
-  <div class="social-icons">
-    <a href="#" aria-label="Instagram">
-      <svg viewBox="0 0 24 24">
-        <rect x="2" y="2" width="20" height="20" rx="5"/>
-        <circle cx="12" cy="12" r="4"/>
-        <circle cx="17.5" cy="6.5" r="1.2"/>
-      </svg>
-    </a>
-
-    <a href="#" aria-label="YouTube">
-      <svg viewBox="0 0 24 24">
-        <path d="M23 12s0-4-1-5-5-1-10-1-9 0-10 1-1 5-1 5 0 4 1 5 5 1 10 1 9 0 10-1 1-5 1-5z"/>
-        <polygon points="10,8 16,12 10,16"/>
-      </svg>
-    </a>
-
-    <a href="#" aria-label="Spotify">
-      <svg viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10"/>
-        <path d="M7 10c4-1 8 0 10 1"/>
-        <path d="M7.5 13c3-.5 6 .2 8 1"/>
-        <path d="M8 16c2-.3 4 .2 6 .8"/>
-      </svg>
-    </a>
+  <div class="social">
+    <a href="#">Instagram</a>
+    <a href="#">YouTube</a>
+    <a href="#">Spotify</a>
   </div>
-
 </header>
 
-<!-- RELEASES -->
-<section class="grid-releases">
+<section id="artists">
+  <div class="grid-artists">
 
-  <div class="album">
-    <div class="album-image">
-      <img class="front" src="images/discomatadiau.png">
-      <img class="back" src="images/discomatadiauback.png">
+    <!-- ARTISTA 1 -->
+    <div class="artist-card">
+      <a href="artist-claudiomelis.html">
+        <img src="images/claudiomelis.png" alt="Claudio Melis">
+        <div class="artist-name">Claudio Melis</div>
+      </a>
     </div>
-    <div class="album-info">
-      <p>Artista 1</p>
-      <p>Disco 1</p>
-      <div class="paypal-button" id="paypal-button-container-1"></div>
+
+    <!-- ARTISTA 2 -->
+    <div class="artist-card">
+      <a href="artist-eliacasu.html">
+        <img src="images/eliacasu.png" alt="Elia Casu">
+        <div class="artist-name">Elia Casu</div>
+      </a>
     </div>
+
+    <!-- ARTISTA 3 -->
+    <div class="artist-card">
+      <a href="artist-antoniopinna.html">
+        <img src="images/antoniopinna.png" alt="Antonio Pinna">
+        <div class="artist-name">Antonio Pinna</div>
+      </a>
+    </div>
+
   </div>
-
-  <div class="album">
-    <div class="album-image">
-      <img class="front" src="images/disco2.png">
-      <img class="back" src="images/disco2back.png">
-    </div>
-    <div class="album-info">
-      <p>Artista 2</p>
-      <p>Disco 2</p>
-      <div class="paypal-button" id="paypal-button-container-2"></div>
-    </div>
-  </div>
-
 </section>
 
 <footer>
   &copy; 2025 Mraxani Label
 </footer>
-
-<!-- PAYPAL -->
-<script src="https://www.paypal.com/sdk/js?client-id=IL_TUO_CLIENT_ID&currency=EUR"></script>
-<script>
-paypal.Buttons({}).render('#paypal-button-container-1');
-paypal.Buttons({}).render('#paypal-button-container-2');
-</script>
 
 </body>
 </html>
