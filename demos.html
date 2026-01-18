@@ -1,90 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>[Your Label Name] - Demo Policy</title>
+
+<!-- FONT TITILLIUM WEB -->
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
-  /* Reset globale */
+  /* RESET GLOBALE */
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #fff;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* centra tutto il contenuto orizzontalmente */
+  html, body {
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #fdfcf7; /* stesso sfondo delle altre pagine */
+    color: #111;
   }
 
-  /* Logo centrato */
-  .logo-link {
-    margin: 20px 20px; /* distanza dal bordo superiore */
+  /* HEADER LOGO A SINISTRA */
+  header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
   }
 
   .logo-link img {
-    height: 100px; /* dimensione logo */
+    height: 100px;
     width: auto;
     display: block;
   }
 
-  /* Container per la Demo Policy */
+  /* CONTAINER DEMO POLICY */
   #demo-policy {
     max-width: 800px;
     width: 100%;
     padding: 20px;
-    text-align: center; /* centra titoli e paragrafi */
+    margin: 20px auto 50px auto;
+    text-align: left; /* testo allineato a sinistra */
     line-height: 1.6;
+  }
+
+  #demo-policy h2, #demo-policy h3 {
+    font-weight: 700;
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+
+  #demo-policy p {
+    margin-bottom: 10px;
   }
 
   #demo-policy ul {
     list-style-position: inside;
-    display: inline-block;
-    text-align: left;
-    margin: 10px auto 20px auto;
-    padding: 0;
+    margin: 10px 0 20px 0;
+    padding-left: 20px;
   }
 
   #demo-policy a {
-    color: #0000EE;
+    color: #111;
     text-decoration: none;
+    font-weight: 700;
   }
 
   #demo-policy a:hover {
     text-decoration: underline;
   }
+
 </style>
 </head>
 <body>
 
-<!-- Logo centrato -->
-<a href="index.html" class="logo-link">
-  <img src="images/logo.png" alt="[Your Label Name] Logo">
-</a>
+<!-- HEADER LOGO A SINISTRA -->
+<header>
+  <a href="index.html" class="logo-link">
+    <img src="images/logo2.png" alt="[Your Label Name] Logo">
+  </a>
+</header>
 
-<!-- Demo Policy Section -->
+<!-- SEZIONE DEMO POLICY -->
 <section id="demo-policy">
-  <h2 style="margin-top: 0; margin-bottom:10px;">Demo Submission Policy</h2>
+  <h2>Demo Submission Policy</h2>
   
-  <p style="margin-top:0; margin-bottom:10px;">
+  <p>
     Thank you for your interest in submitting your music to <strong>[Your Label Name]</strong>!
   </p>
   
-  <p style="margin-top:0; margin-bottom:10px;">
+  <p>
     We are a young and passionate independent record label, always on the lookout for new sounds and fresh talent. We <strong>welcome demo submissions from artists and producers of all levels</strong> and are committed to listening to <strong>all material we receive</strong>.
   </p>
 
-  <h3 style="margin-top:15px; margin-bottom:5px;">What We Are Looking For</h3>
-  <p style="margin-top:0; margin-bottom:10px;">
+  <h3>What We Are Looking For</h3>
+  <p>
     We are open to demos in all genres that fit the artistic vision of our label. We encourage creativity and originality — even if your style doesn’t perfectly match our current roster.
   </p>
 
-  <h3 style="margin-top:15px; margin-bottom:5px;">How to Submit</h3>
-  <p style="margin-top:0; margin-bottom:10px;">
+  <h3>How to Submit</h3>
+  <p>
     Please send your demo by email to: <a href="mailto:demo@[yourlabel].com">demo@[yourlabel].com</a>
   </p>
   <ul>
@@ -93,21 +111,21 @@
     <li>Links to your social media and music platforms (if available)</li>
   </ul>
 
-  <h3 style="margin-top:15px; margin-bottom:5px;">Review Process</h3>
-  <p style="margin-top:0; margin-bottom:10px;">
+  <h3>Review Process</h3>
+  <p>
     We <strong>listen to every demo we receive</strong>, but please understand that response times may vary. If your music fits what we’re looking for and we see a potential collaboration, we will contact you to discuss next steps.
   </p>
 
-  <h3 style="margin-top:15px; margin-bottom:5px;">Important Notes</h3>
+  <h3>Important Notes</h3>
   <ul>
     <li>Submitting your demo does <strong>not</strong> guarantee a contract or release.</li>
     <li>By submitting, you affirm that you own all rights to the music you send and that it is your original work.</li>
   </ul>
 
-  <p style="margin-top:0; margin-bottom:10px;">
+  <p>
     We look forward to hearing what you’ve been working on! 🎧🔥
   </p>
-  <p style="font-weight:bold; margin-top:0;">
+  <p style="font-weight:bold;">
     [Your Label Name] — Always listening.
   </p>
 </section>
