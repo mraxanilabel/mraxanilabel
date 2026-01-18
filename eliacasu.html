@@ -11,18 +11,18 @@
 <style>
   body {
     font-family: 'Titillium Web', sans-serif;
-    background-color: #fdfcf7; /* stesso sfondo delle altre pagine */
+    background-color: #fdfcf7;
     color: #111;
     line-height: 1.6;
     margin: 0;
-    padding: 20px;
+    padding: 0; /* nessun padding superiore */
   }
 
   /* HEADER con logo a sinistra */
   header {
     display: flex;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 20px; /* padding ridotto */
   }
 
   header a img {
@@ -30,10 +30,10 @@
     width: auto;
   }
 
-  /* Contenuto artista centrato */
+  /* Contenuto artista centrato e vicino al bordo superiore */
   .artist-container {
     max-width: 700px;
-    margin: 40px auto 0 auto; /* margine sopra per separare dal logo */
+    margin: 10px auto 0 auto; /* margine ridotto sopra */
     text-align: center;
   }
 
@@ -56,16 +56,23 @@
     margin-bottom: 25px;
   }
 
-  /* STILE PLAYER SPOTIFY */
+  /* PLAYER SPOTIFY */
   .spotify-player {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   }
 
+  .spotify-player iframe {
+    width: 100%;
+    height: 380px;
+    border: none;
+  }
 </style>
 </head>
 <body>
+
+<!-- LOGO in alto a sinistra -->
 <header>
   <a href="index.html">
     <img src="images/logo2.png" alt="Logo Etichetta">
@@ -73,18 +80,22 @@
 </header>
 
 <div class="artist-container">
+  <!-- FOTO ARTISTA -->
+  <img src="images/artista1.jpg" alt="Nome Artista" class="artista">
 
   <!-- NOME ARTISTA -->
-  <h1>ELIA CASU</h1>
+  <h1>Nome Artista</h1>
 
   <!-- BIO -->
   <p class="bio">
-   Elia Casu is an Italian musician and composer whose work moves between guitar, electronics, and soundscapes. With roots in jazz and improvisation, he explores organic textures and deep grooves, creating music that balances introspection and motion. His sound blends melodic sensitivity with electronic precision, shaping a contemporary ambient-inspired style.
+    Breve descrizione dell’artista. Qui puoi scrivere la sua storia, genere musicale, influenze e curiosità.
   </p>
 
-  <!-- SPOTIFY PLAYER -->
+  <!-- PLAYER SPOTIFY -->
   <div class="spotify-player">
-<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/5xa03ysfcU7soHPxI7lJx9?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe src="https://open.spotify.com/embed/artist/IL_TUO_ARTIST_ID?utm_source=generator" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+    </iframe>
   </div>
 </div>
 
