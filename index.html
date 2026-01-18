@@ -27,13 +27,13 @@
     }
 
     /* HEADER */
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 20px;
-      background-color: transparent;
-    }
+header {
+  position: absolute; /* esce dal flusso */
+  top: 0;
+  left: 0;
+  padding: 20px 20px; /* piccolo padding */
+  z-index: 10; /* assicurati che sia sopra gli altri elementi */
+}
 
     /* LOGO */
     header img {
