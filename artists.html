@@ -1,115 +1,141 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Etichetta Discografica - Artisti</title>
-  <style>
-    /* RESET */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background: #fff; color: #111; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Etichetta Discografica - Artisti</title>
 
-    /* Header con logo Home */
-    header {
-      display: flex;
-      align-items: center;
-      padding: 20px 20px;
-    }
+<!-- FONT TITILLIUM WEB -->
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
-    header a {
-      display: inline-block;
-    }
+<style>
+  /* RESET */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    header img {
-      height: 100px; /* altezza logo */
-      width: auto;
-      cursor: pointer;
-    }
+  body {
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #fdfcf7; /* bianco sporco */
+    color: #111;
+  }
 
-    /* Sezione Artisti */
-    #artisti {
-      padding: 20px;
-    }
+  /* Header con logo Home */
+  header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
 
-    /* Griglia artisti 3 colonne */
+  header a {
+    display: inline-block;
+  }
+
+  header img {
+    height: 100px;
+    width: auto;
+    cursor: pointer;
+  }
+
+  /* Sezione Artisti */
+  #artisti {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Griglia artisti */
+  .grid-artisti {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  .artista-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .artista-card a {
+    display: block; /* rende l'intera card cliccabile */
+  }
+
+  .artista-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* rende le immagini quadrate */
+    object-fit: cover;
+    display: block;
+    transition: transform 0.25s ease;
+  }
+
+  .artista-card img:hover {
+    transform: scale(1.05);
+  }
+
+  .artista-card p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    margin: 0;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .artista-card:hover p {
+    opacity: 1;
+  }
+
+  /* Footer semplice */
+  footer {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    color: #777;
+    border-top: 1px solid #eee;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
     .grid-artisti {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 colonne fisse */
-      gap: 10px;              /* piccolo spazio tra le immagini */
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
     }
+  }
 
-    .artista-card {
-      position: relative; /* necessario per testo sovrapposto */
-      overflow: hidden;
-    }
-
-    .artista-card img {
-      width: 100%;
-      height: 350px;         /* immagini grandi */
-      object-fit: cover;
-      display: block;
-      transition: transform 0.25s ease;
-    }
-
-    .artista-card img:hover {
-      transform: scale(1.05);
-    }
-
-    /* Nome artista visibile solo al passaggio del mouse */
-    .artista-card p {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 10px 0;
-      margin: 0;
-      background: rgba(0, 0, 0, 0.6);
-      color: #fff;
-      font-weight: 500;
-      font-size: 1rem;
-      text-align: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .artista-card:hover p {
-      opacity: 1;
-    }
-
-    /* Footer semplice */
-    footer {
-      text-align: center;
-      padding: 20px 0;
-      font-size: 0.9rem;
-      color: #777;
-      border-top: 1px solid #eee;
-    }
-  </style>
+</style>
 </head>
 <body>
 
 <header>
-  <!-- Logo cliccabile come Home -->
   <a href="index.html">
     <img src="images/logo2.png" alt="Logo Etichetta">
   </a>
 </header>
 
 <section id="artisti">
+  <div class="grid-artisti">
     <div class="artista-card">
-      <img src="images/antoniopinna.png" alt="Antonio Pinna">
-      <p>Claudio Melis</p>
-        </div>
-   <div class="artista-card">
-      <img src="images/eliacasu.png" alt="Elia Casu">
-      <p>Claudio Melis</p>
+      <a href="artista-antonio.html">
+        <img src="images/antoniopinna.png" alt="Antonio Pinna">
+        <p>Antonio Pinna</p>
+      </a>
     </div>
     <div class="artista-card">
-      <img src="images/claudiomelis.png" alt="Claudio Melis">
-      <p>Claudio Melis</p>
+      <a href="artista-elia.html">
+        <img src="images/eliacasu.png" alt="Elia Casu">
+        <p>Elia Casu</p>
+      </a>
+    </div>
+    <div class="artista-card">
+      <a href="artista-claudio.html">
+        <img src="images/claudiomelis.png" alt="Claudio Melis">
+        <p>Claudio Melis</p>
+      </a>
     </div>
   </div>
 </section>
