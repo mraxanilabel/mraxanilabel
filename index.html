@@ -39,7 +39,7 @@ header {
   justify-content:space-between;
   align-items:center;
   padding:20px;
-  z-index:30;
+  z-index:100;
 }
 
 header .logo img {
@@ -47,17 +47,13 @@ header .logo img {
   display:block;
 }
 
-/* NAV DESKTOP */
+/* NAVBAR DESKTOP */
 nav {
-  position:fixed;
-  top:50px;
-  left:0;
-  right:0;
   display:flex;
   justify-content:center;
   gap:25px;
-  padding:12px 0;
-  z-index:20;
+  position:relative;
+  z-index:90;
 }
 
 nav a {
@@ -75,7 +71,7 @@ nav a:hover { color:#555; }
   display:none;
   background:none;
   border:none;
-  font-size:26px;
+  font-size:28px;
   cursor:pointer;
   color:#111;
 }
@@ -163,25 +159,25 @@ footer .social-buttons a {
   font-size:24px;
 }
 
-/* ============ MOBILE ============ */
+/* ================= MOBILE ================= */
 @media (max-width:768px) {
-
-  .hamburger {
-    display:block;
-  }
 
   nav {
     display:none;
-    position:static;
     flex-direction:column;
     background:#fff9e6;
     padding:20px 0;
     gap:15px;
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    z-index:100;
   }
 
-  nav.active {
-    display:flex;
-  }
+  nav.active { display:flex; }
+
+  .hamburger { display:block; }
 
   .grid-releases {
     grid-template-columns:1fr;
@@ -213,7 +209,6 @@ footer .social-buttons a {
       <img src="images/logo2.png" alt="Logo Etichetta">
     </a>
   </div>
-
   <button class="hamburger" aria-label="Menu">
     <i class="fas fa-bars"></i>
   </button>
@@ -229,7 +224,6 @@ footer .social-buttons a {
 
 <main>
 <section class="grid-releases">
-
   <div class="album">
     <div class="album-image">
       <img class="front" src="images/discomatadiau.png">
@@ -253,7 +247,6 @@ footer .social-buttons a {
       <p>ML 002</p>
     </div>
   </div>
-
 </section>
 
 <div class="banner">
@@ -276,6 +269,13 @@ footer .social-buttons a {
 
   hamburger.addEventListener('click', () => {
     nav.classList.toggle('active');
+  });
+
+  // Chiudi il menu quando clicchi su un link
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('active');
+    });
   });
 </script>
 
