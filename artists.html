@@ -9,14 +9,18 @@
 
 <style>
 /* RESET */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* LAYOUT BASE */
 body {
   font-family: 'Titillium Web', sans-serif;
   background-color: #fdfcf7;
   color: #111;
 
-  /* 🔑 CHIAVE */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -35,9 +39,13 @@ header {
   height: 100px;
 }
 
-/* SEZIONE ARTISTI (CONTENUTO FLESSIBILE) */
+/* CONTENUTO CENTRALE */
+main {
+  flex: 1; /* 🔑 spinge il footer in basso */
+}
+
+/* SEZIONE ARTISTI */
 #artists {
-  flex: 1; /* 🔑 SPINGE IL FOOTER IN BASSO */
   display: flex;
   justify-content: center;
   margin-top: 10px;
@@ -63,6 +71,7 @@ header {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  display: block;
   transition: transform 0.3s ease;
 }
 
@@ -70,7 +79,7 @@ header {
   transform: scale(1.05);
 }
 
-/* NOME ARTISTA */
+/* OVERLAY NOME ARTISTA */
 .artist-name {
   position: absolute;
   bottom: 0;
@@ -81,11 +90,11 @@ header {
   color: #fff;
   text-align: center;
   font-weight: 700;
-
-  /* 🔑 BLOCCA L'OVERLAY ALL'IMMAGINE */
-  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
+/* HOVER */
 .artist-card:hover .artist-name {
   opacity: 1;
 }
@@ -97,7 +106,7 @@ header {
   text-decoration: none;
 }
 
-/* FOOTER SEMPRE IN FONDO */
+/* FOOTER */
 footer {
   text-align: center;
   padding: 25px 0;
@@ -116,32 +125,34 @@ footer {
   </a>
 </header>
 
-<section id="artists">
-  <div class="grid-artists">
+<main>
+  <section id="artists">
+    <div class="grid-artists">
 
-    <div class="artist-card">
-      <a href="claudiomelis.html">
-        <img src="images/claudiomelis.png" alt="Claudio Melis">
-        <div class="artist-name">Claudio Melis</div>
-      </a>
+      <div class="artist-card">
+        <a href="claudiomelis.html">
+          <img src="images/claudiomelis.png" alt="Claudio Melis">
+          <div class="artist-name">Claudio Melis</div>
+        </a>
+      </div>
+
+      <div class="artist-card">
+        <a href="eliacasu.html">
+          <img src="images/eliacasu.png" alt="Elia Casu">
+          <div class="artist-name">Elia Casu</div>
+        </a>
+      </div>
+
+      <div class="artist-card">
+        <a href="artist-antoniopinna.html">
+          <img src="images/antoniopinna.png" alt="Antonio Pinna">
+          <div class="artist-name">Antonio Pinna</div>
+        </a>
+      </div>
+
     </div>
-
-    <div class="artist-card">
-      <a href="eliacasu.html">
-        <img src="images/eliacasu.png" alt="Elia Casu">
-        <div class="artist-name">Elia Casu</div>
-      </a>
-    </div>
-
-    <div class="artist-card">
-      <a href="artist-antoniopinna.html">
-        <img src="images/antoniopinna.png" alt="Antonio Pinna">
-        <div class="artist-name">Antonio Pinna</div>
-      </a>
-    </div>
-
-  </div>
-</section>
+  </section>
+</main>
 
 <footer>
   &copy; 2025 Mraxani Label
