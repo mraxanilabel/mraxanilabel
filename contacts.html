@@ -5,84 +5,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CONTACTS</title>
 
-<!-- FONT TITILLIUM WEB -->
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-
 <style>
-  /* RESET GLOBALE */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  html, body {
-    height: 100%;
-    font-family: 'Titillium Web', sans-serif; /* Font Titillium Web */
-    background-color: #fff9e6; 
-    color: #111;
-  }
+/* LAYOUT BASE */
+body {
+  font-family: 'Titillium Web', sans-serif;
+  background-color: #fff9e6;
+  color: #111;
 
-  /* BODY VERTICALE */
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-  /* HEADER LOGO A SINISTRA */
-  header {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    flex-shrink: 0;
-  }
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
 
-  .logo-link img {
-    height: 100px;
-    width: auto;
-    display: block;
-  }
+/* LOGO */
+.logo img {
+  height: 100px;
+}
 
-  /* SEZIONE DEMO POLICY */
-  #demo-policy {
-    max-width: 800px;
-    width: 100%;
-    padding: 20px;
-    margin: -80px auto 0 auto; /* ← QUI È LA CHIAVE */
-    text-align: center;
-    line-height: 1.6;
-    background-color: #fff9e6; 
-  }
+/* CONTENUTO CENTRALE */
+main {
+  flex: 1; /* 🔑 spinge il footer in basso */
+}
 
-  /* TITOLI E TESTO */
-  #demo-policy h2, #demo-policy h3 {
-    font-weight: 700;
-    margin-bottom: 10px;
-    margin-top: 20px;
-  }
 
-  #demo-policy p {
-    margin-bottom: 10px;
-  }
+}
 
-  #demo-policy ul {
-    list-style-position: inside;
-    margin: 10px 0 20px 0;
-    padding-left: 20px;
-  }
-
-  #demo-policy a {
-    color: #111;
-    text-decoration: none;
-    font-weight: 700;
-  }
-
-  #demo-policy a:hover {
-    text-decoration: underline;
-  }
+/* FOOTER */
 footer {
   text-align: center;          /* testo e pulsanti centrati */
   padding: 25px 20px;
@@ -113,28 +80,44 @@ footer .social-buttons a:hover {
 }
 </style>
 </head>
+
 <body>
 
-<!-- HEADER LOGO A SINISTRA -->
 <header>
-  <a href="index.html" class="logo-link">
-    <img src="images/logo2.png" alt="[Your Label Name] Logo">
+  <a href="index.html" class="logo">
+    <img src="images/logo2.png" alt="Mraxani Label">
   </a>
 </header>
 
-<!-- SEZIONE DEMO POLICY -->
-<section id="demo-policy">
-  <h2>CONTACTS</h2>
-  
-  <p>
-    mail: prova@mraxanilabel.it</p>
-    <p>youtubechannel: fairgaoirg.youtube</p>
-   <p> instagram: srgjargiajrg</p>
+<main>
+  <section id="artists">
+    <div class="grid-artists">
 
+      <div class="artist-card">
+        <a href="claudiomelis.html">
+          <img src="images/claudiomelis.png" alt="Claudio Melis">
+          <div class="artist-name">Claudio Melis</div>
+        </a>
+      </div>
 
+      <div class="artist-card">
+        <a href="eliacasu.html">
+          <img src="images/eliacasu.png" alt="Elia Casu">
+          <div class="artist-name">Elia Casu</div>
+        </a>
+      </div>
 
-  
-</section>
+      <div class="artist-card">
+        <a href="artist-antoniopinna.html">
+          <img src="images/antoniopinna.png" alt="Antonio Pinna">
+          <div class="artist-name">Antonio Pinna</div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+</main>
+
 <footer>
   &copy; 2026 Mraxani Label
   <div class="social-buttons">
@@ -149,5 +132,6 @@ footer .social-buttons a:hover {
     </a>
   </div>
 </footer>
+
 </body>
 </html>
