@@ -18,16 +18,16 @@
 
   html, body {
     height: 100%;
-    font-family: 'Titillium Web', sans-serif;
-    background-color: #fdfcf7; /* stesso sfondo delle altre pagine */
+    font-family: 'Titillium Web', sans-serif; /* Font Titillium Web */
+    background-color: #fdfcf7; /* Bianco sporco */
     color: #111;
   }
 
-  /* BODY COME FLEX CON DIREZIONE VERTICALE */
+  /* BODY VERTICALE */
   body {
     display: flex;
-    flex-direction: column; /* header in cima, sezione sotto */
-    min-height: 100vh;      /* almeno tutta l'altezza finestra */
+    flex-direction: column;
+    min-height: 100vh;
   }
 
   /* HEADER LOGO A SINISTRA */
@@ -35,7 +35,7 @@
     display: flex;
     align-items: center;
     padding: 20px;
-    flex-shrink: 0; /* non si riduce */
+    flex-shrink: 0;
   }
 
   .logo-link img {
@@ -44,14 +44,15 @@
     display: block;
   }
 
-  /* CONTAINER DEMO POLICY */
+  /* SEZIONE DEMO POLICY */
   #demo-policy {
     max-width: 800px;
     width: 100%;
     padding: 20px;
-    margin: auto;       /* centra verticalmente e orizzontalmente */
-    text-align: left; 
+    margin: 50px auto 0 auto; /* 50px dal bordo superiore */
+    text-align: left;
     line-height: 1.6;
+    background-color: #fdfcf7; /* stessa del body, bianco sporco */
   }
 
   /* TITOLI E TESTO */
