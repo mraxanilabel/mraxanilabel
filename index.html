@@ -8,20 +8,19 @@
 <!-- FONT TITILLIUM WEB -->
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
-<!-- ICONS (lucide) -->
-<link href="https://cdn.jsdelivr.net/npm/lucide@0.258.0/dist/lucide.min.css" rel="stylesheet">
-
 <style>
 /* RESET */
 * { margin:0; padding:0; box-sizing:border-box; }
 html, body { font-family: 'Titillium Web', sans-serif; background: #fdfcf7; color:#111; }
 
-/* HEADER: LOGO */
+/* HEADER */
 header {
   position: absolute;
   top:0;
   left:0;
+  right:0;
   display:flex;
+  justify-content: space-between;
   align-items: center;
   padding:20px 20px;
   z-index:10;
@@ -33,56 +32,29 @@ header .logo img {
   display:block;
 }
 
-/* NAVBAR TRASPARENTE CON SOCIAL INTEGRATI A DESTRA */
+/* NAVBAR TRASPARENTE */
 nav {
   position: fixed;
-  top:50px;   /* distanza dal bordo superiore */
+  top: 50px;   /* distanza dal bordo superiore */
   left:0;
   right:0;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  padding:12px 0;
   background-color: transparent;
   z-index:20;
 }
 
-nav .nav-container {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  width:100%;
-  max-width:1200px;
-  margin:0 auto;
-}
-
-nav .nav-links {
-  display:flex;
-  gap:25px;
-  flex-grow:1;
-  justify-content:center;
-}
-
-nav .nav-links a {
+nav a {
   text-decoration:none;
   color:#111;
   font-weight:700;
   text-transform:uppercase;
   font-size:0.95rem;
-  transition: color 0.2s;
 }
 
-nav .nav-links a:hover { color:#555; }
-
-nav .social-icons {
-  display:flex;
-  gap:15px;
-}
-
-nav .social-icons a {
-  color:#111;
-  text-decoration:none;
-  font-size:1.5rem;
-  transition: color 0.2s;
-}
-
-nav .social-icons a:hover { color:#555; }
+nav a:hover { color:#555; }
 
 /* GRIGLIA DISCHI */
 .grid-releases {
@@ -90,7 +62,7 @@ nav .social-icons a:hover { color:#555; }
   grid-template-columns: repeat(auto-fit, minmax(360px,1fr));
   gap:24px;
   max-width:1000px;
-  margin: 120px auto 40px auto; /* più vicina alla barra */
+  margin: 150px auto 40px auto;
   justify-items: center;
 }
 
@@ -155,7 +127,7 @@ nav .social-icons a:hover { color:#555; }
 
 .paypal-button button:hover { background-color:#333; }
 
-/* FOOTER */
+/* FOOTER CON PULSANTI SOCIAL */
 footer {
   text-align:center;
   padding:25px 0;
@@ -163,9 +135,33 @@ footer {
   color:#777;
   border-top:1px solid #eee;
   margin-top:40px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap:10px;
 }
 
-footer a { margin:0 8px; color:#111; text-decoration:none; }
+footer .social-buttons {
+  display:flex;
+  gap:12px;
+}
+
+footer .social-buttons a {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background-color:#111;
+  color:#fff;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  text-decoration:none;
+  transition: background 0.2s;
+}
+
+footer .social-buttons a:hover { background-color:#333; }
+
+footer a { color:#111; text-decoration:none; margin:0 5px; }
 footer a:hover { color:#555; }
 
 </style>
@@ -179,26 +175,13 @@ footer a:hover { color:#555; }
   </div>
 </header>
 
-<!-- BARRA DI NAV CON LINK + SOCIAL -->
-<nav style="position: fixed; top:50px; left:0; right:0; display:flex; justify-content:space-between; align-items:center; padding:12px 40px; background-color: rgba(255,255,255,0.95); z-index:50; max-width:1200px; margin:0 auto;">
-  
-  <!-- LINK PRINCIPALI -->
-  <div class="nav-links" style="display:flex; gap:25px;">
-    <a href="index.html">Home</a>
-    <a href="artists.html">Artists</a>
-    <a href="demos.html">Demos</a>
-    <a href="#contacts">Contacts</a>
-  </div>
-  
-  <!-- PULSANTI SOCIAL -->
-  <div class="social-icons" style="display:flex; gap:15px;">
-    <a href="#" target="_blank" title="Instagram"><i class="lucide-instagram"></i></a>
-    <a href="#" target="_blank" title="YouTube"><i class="lucide-youtube"></i></a>
-    <a href="#" target="_blank" title="Spotify"><i class="lucide-spotify"></i></a>
-  </div>
-
+<!-- BARRA DI NAV -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="artists.html">Artists</a>
+  <a href="demos.html">Demos</a>
+  <a href="#contacts">Contacts</a>
 </nav>
-
 
 <!-- RELEASES -->
 <section id="releases" class="grid-releases">
@@ -235,21 +218,19 @@ footer a:hover { color:#555; }
 
 <!-- FOOTER -->
 <footer>
-  <div style="display:flex; justify-content:center; align-items:center; gap:15px; flex-wrap: wrap;">
-    <span>&copy; 2025 Mraxani Label</span>
-    <a href="#" target="_blank" title="Instagram"><i class="lucide-instagram"></i></a>
-    <a href="#" target="_blank" title="YouTube"><i class="lucide-youtube"></i></a>
-    <a href="#" target="_blank" title="Spotify"><i class="lucide-spotify"></i></a>
-  </div>
-  <div style="margin-top:5px;">
-    <a href="#">Instagram</a> | <a href="#">Facebook</a>
+  &copy; 2025 Mraxani Label
+  <div class="social-buttons">
+    <a href="#" target="_blank" title="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37a4 4 0 1 1-4.88-4.88 4 4 0 0 1 4.88 4.88z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+    </a>
+    <a href="#" target="_blank" title="YouTube">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12c0-1.104-.896-2-2-2H4c-1.104 0-2 .896-2 2v0c0 1.104.896 2 2 2h16c1.104 0 2-.896 2-2z"></path><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+    </a>
+    <a href="#" target="_blank" title="Spotify">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a9 9 0 0 1 14 0"></path><path d="M4 9.5a12 12 0 0 1 16 0"></path><path d="M3 7a15 15 0 0 1 18 0"></path></svg>
+    </a>
   </div>
 </footer>
-
-
-<!-- NON DIMENTICARE -->
-<script src="https://cdn.jsdelivr.net/npm/lucide@0.258.0/dist/lucide.min.js"></script>
-<script>lucide.createIcons();</script>
 
 </body>
 </html>
