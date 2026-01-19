@@ -43,8 +43,11 @@ header {
 }
 
 header .logo img {
-  height:60px;
-  display:block;
+  height: 60px;
+  width: auto;
+  display: block;
+  position: relative;   /* così possiamo usare z-index */
+  z-index: 30;          /* superiore al nav che è a 20 */
 }
 
 /* NAVBAR DESKTOP */
