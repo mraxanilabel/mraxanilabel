@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -9,8 +8,8 @@
 <!-- FONT TITILLIUM WEB -->
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
   /* RESET GLOBALE */
@@ -22,19 +21,18 @@
 
   html, body {
     height: 100%;
-    font-family: 'Titillium Web', sans-serif; /* Font Titillium Web */
+    font-family: 'Titillium Web', sans-serif;
     background-color: #fff9e6; 
     color: #111;
   }
 
-  /* BODY VERTICALE */
   body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; /* fondamentale per footer in basso */
   }
 
-  /* HEADER LOGO A SINISTRA */
+  /* HEADER LOGO */
   header {
     display: flex;
     align-items: center;
@@ -53,14 +51,14 @@
     max-width: 800px;
     width: 100%;
     padding: 20px;
-    margin: -100px auto 0 auto; /* ← QUI È LA CHIAVE */
+    margin: 20px auto 0 auto; /* margine superiore */
     font-size: 1rem;
     text-align: center;
     line-height: 1.5;
     background-color: #fff9e6; 
+    flex-grow: 1; /* fa crescere la sezione per spingere il footer in basso se la pagina è corta */
   }
 
-  /* TITOLI E TESTO */
   #cd-orders h2, #cd-orders h3 {
     font-weight: 700;
     margin-bottom: 10px;
@@ -69,12 +67,6 @@
 
   #cd-orders p {
     margin-bottom: 10px;
-  }
-
-  #cd-orders ul {
-    list-style-position: inside;
-    margin: 10px 0 20px 0;
-    padding-left: 20px;
   }
 
   #cd-orders a {
@@ -86,39 +78,42 @@
   #cd-orders a:hover {
     text-decoration: underline;
   }
+
+  /* FOOTER */
   footer {
-  text-align: center;          /* testo e pulsanti centrati */
-  padding: 25px 20px;
-  font-size: 0.9rem;
-  color: #111;                 /* colore testo */
-  border-top: 1px solid #eee;
-  background-color: #fff9e6;   /* bianco caldo */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;                   /* spazio tra copyright e pulsanti */
-}
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 0.9rem;
+    color: #111;
+    border-top: 1px solid #eee;
+    background-color: #fff9e6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0; /* fondamentale per restare in basso */
+  }
 
-footer .social-buttons {
-  display: flex;
-  gap: 15px;                   /* spazio tra le icone */
-}
+  footer .social-buttons {
+    display: flex;
+    gap: 15px;
+  }
 
-footer .social-buttons a {
-  color: #111;                 /* icone nere */
-  font-size: 24px;             /* dimensione icone */
-  transition: transform 0.3s ease, color 0.3s ease;
-}
+  footer .social-buttons a {
+    color: #111;
+    font-size: 24px;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
 
-footer .social-buttons a:hover {
-  color: #555;                 /* leggero scurimento al passaggio del mouse */
-  transform: translateY(-2px); /* effetto sollevamento */
-}
+  footer .social-buttons a:hover {
+    color: #555;
+    transform: translateY(-2px);
+  }
 </style>
 </head>
 <body>
 
-<!-- HEADER LOGO A SINISTRA -->
+<!-- HEADER LOGO -->
 <header>
   <a href="index.html" class="logo-link">
     <img src="images/logo2.png" alt="[Your Label Name] Logo">
@@ -134,15 +129,15 @@ footer .social-buttons a:hover {
   </p>
   
   <p>
-    “You can listen to our artists’ music on all major digital platforms. 
-    If you would like to own a physical copy of an album, simply place an order by emailing info@mraxanilabel.it, 
-    and we will ship it directly to your home as quickly as possible.
-
-  </p>
-
-
+    You can listen to our artists’ music on all major digital platforms but 
+  <p>
+      if you would like to own a physical copy of an album, <p>simply place an order by emailing 
+    <a href="mailto:info@mraxanilabel.it"><strong>info@mraxanilabel.it</strong></a>, 
+    <p>and we will ship it directly to your home as quickly as possible.
   </p>
 </section>
+
+<!-- FOOTER -->
 <footer>
   &copy; 2026 Mraxani Label
   <div class="social-buttons">
@@ -157,5 +152,6 @@ footer .social-buttons a:hover {
     </a>
   </div>
 </footer>
+
 </body>
 </html>
