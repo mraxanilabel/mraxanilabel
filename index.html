@@ -179,23 +179,26 @@ footer a:hover { color:#555; }
   </div>
 </header>
 
-<!-- BARRA DI NAV -->
-<nav>
-  <div class="nav-container" style="display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto;">
-    <!-- LINK PRINCIPALI -->
-    <div class="nav-links" style="display:flex; gap:25px;">
-      <a href="index.html">Home</a>
-      <a href="artists.html">Artists</a>
-      <a href="demos.html">Demos</a>
-      <a href="#contacts">Contacts</a>
-    </div>
-    <!-- PULSANTI SOCIAL -->
-    <div class="social-icons" style="display:flex; gap:15px;">
-      <a href="#" target="_blank" title="Instagram"><i class="lucide-instagram"></i></a>
-      <a href="#" target="_blank" title="YouTube"><i class="lucide-youtube"></i></a>
-    </div>
+<!-- BARRA DI NAV CON LINK + SOCIAL -->
+<nav style="position: fixed; top:50px; left:0; right:0; display:flex; justify-content:space-between; align-items:center; padding:12px 40px; background-color: rgba(255,255,255,0.95); z-index:50; max-width:1200px; margin:0 auto;">
+  
+  <!-- LINK PRINCIPALI -->
+  <div class="nav-links" style="display:flex; gap:25px;">
+    <a href="index.html">Home</a>
+    <a href="artists.html">Artists</a>
+    <a href="demos.html">Demos</a>
+    <a href="#contacts">Contacts</a>
   </div>
+  
+  <!-- PULSANTI SOCIAL -->
+  <div class="social-icons" style="display:flex; gap:15px;">
+    <a href="#" target="_blank" title="Instagram"><i class="lucide-instagram"></i></a>
+    <a href="#" target="_blank" title="YouTube"><i class="lucide-youtube"></i></a>
+    <a href="#" target="_blank" title="Spotify"><i class="lucide-spotify"></i></a>
+  </div>
+
 </nav>
+
 
 <!-- RELEASES -->
 <section id="releases" class="grid-releases">
@@ -235,7 +238,7 @@ footer a:hover { color:#555; }
   &copy; 2025 Mraxani Label | <a href="#">Instagram</a> | <a href="#">Facebook</a>
 </footer>
 
-<!-- LUCIDE JS -->
+<!-- NON DIMENTICARE -->
 <script src="https://cdn.jsdelivr.net/npm/lucide@0.258.0/dist/lucide.min.js"></script>
 <script>lucide.createIcons();</script>
 
