@@ -73,8 +73,17 @@ footer .social-buttons a:hover {
 /* CONTENUTO CENTRALE */
 main {
   flex: 1; /* 🔑 spinge il footer in basso */
-}
-
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+     margin: -100px auto 0 auto; /* ← QUI È LA CHIAVE */
+    margin-top: -60px;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.5;
+    background-color: #fff9e6; 
+    flex-grow: 1; /* fa crescere la sezione per spingere il footer in basso se la pagina è corta */
+  }
 </style>
 </head>
 
