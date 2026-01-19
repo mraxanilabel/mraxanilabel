@@ -42,7 +42,7 @@ header .logo img {
 /* NAVBAR TRASPARENTE */
 nav {
   position: fixed;
-  top: 50px;   /* distanza dal bordo superiore */
+  top: 50px;
   left:0;
   right:0;
   display:flex;
@@ -101,6 +101,29 @@ nav a:hover { color:#555; }
 .album-info p { margin-top:6px; font-size:0.7rem; color:#444; }
 .album-info .titolo, .album-info .genere { font-weight:500; }
 
+/* BANNER ANIMATO */
+.banner {
+  background-color: #fff2b2;   /* giallo chiaro */
+  color: #111;
+  font-weight: 700;
+  padding: 10px 0;
+  text-align:center;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 20px 0;
+  border-radius:4px;
+}
+
+.banner span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scrollBanner 15s linear infinite;
+}
+
+@keyframes scrollBanner {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
 
 /* FOOTER */
 footer {
@@ -137,25 +160,21 @@ footer .social-buttons a:hover {
 =========================== */
 @media (max-width: 768px) {
 
-  /* LOGO PIÙ PICCOLO */
   header .logo img { height:70px; }
 
-  /* HEADER E NAV VERTICALI SU MOBILE */
   header { flex-direction: column; align-items: center; gap:10px; }
   nav { position: static; gap:15px; margin-top:10px; }
 
-  /* GRIGLIA DISCHI ADATTIVA */
   .grid-releases { grid-template-columns: 1fr; margin-top:120px; padding:0 15px; }
 
   .album-image { width:100%; max-width:300px; height:auto; aspect-ratio:1/1; }
   .album-image img { position:relative; width:100%; height:100%; }
 
-  /* TESTO DISCHI */
   .album-info p { font-size:0.85rem; }
   .paypal-button button { padding:8px 16px; font-size:0.85rem; }
 
-  /* FOOTER */
   footer { padding:20px 15px; }
+  .banner { font-size:0.85rem; }
 }
 </style>
 </head>
@@ -210,6 +229,12 @@ footer .social-buttons a:hover {
   </div>
 
 </section>
+
+<!-- BANNER STRISCIONE -->
+<div class="banner">
+  <span>🎵 Nuovi album in arrivo! Scopri i CD esclusivi su Mraxani Label 🎵</span>
+</div>
+
 </main>
 
 <!-- FOOTER -->
@@ -230,3 +255,4 @@ footer .social-buttons a:hover {
 
 </body>
 </html>
+
