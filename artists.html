@@ -110,11 +110,32 @@ main {
 
 /* FOOTER */
 footer {
-  text-align: center;
-  padding: 25px 0;
+  text-align: center;          /* testo e pulsanti centrati */
+  padding: 25px 20px;
   font-size: 0.9rem;
-  color: #777;
+  color: #111;                 /* colore testo */
   border-top: 1px solid #eee;
+  background-color: #fff9e6;   /* bianco caldo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;                   /* spazio tra copyright e pulsanti */
+}
+
+footer .social-buttons {
+  display: flex;
+  gap: 15px;                   /* spazio tra le icone */
+}
+
+footer .social-buttons a {
+  color: #111;                 /* icone nere */
+  font-size: 24px;             /* dimensione icone */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+footer .social-buttons a:hover {
+  color: #555;                 /* leggero scurimento al passaggio del mouse */
+  transform: translateY(-2px); /* effetto sollevamento */
 }
 </style>
 </head>
