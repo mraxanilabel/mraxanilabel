@@ -14,42 +14,49 @@
 <style>
 /* RESET */
 * { margin:0; padding:0; box-sizing:border-box; }
-html, body { font-family: 'Titillium Web', sans-serif; background: #fff9e6; color:#111; height: 100%; }
+html, body {
+  font-family:'Titillium Web', sans-serif;
+  background:#fff9e6;
+  color:#111;
+  height:100%;
+}
 
-/* FLEX LAYOUT PER FOOTER STICKY */
-body { display:flex; flex-direction:column; min-height:100vh; }
+/* LAYOUT */
+body {
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
 main { flex:1; }
 
 /* HEADER */
 header {
-  position: absolute;
+  position:absolute;
   top:0;
   left:0;
   right:0;
   display:flex;
-  justify-content: space-between;
-  align-items: center;
-  padding:20px 20px;
-  z-index:10;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px;
+  z-index:30;
 }
 
 header .logo img {
   height:60px;
-  width:auto;
   display:block;
 }
 
-/* NAVBAR TRASPARENTE */
+/* NAV DESKTOP */
 nav {
-  position: fixed;
-  top: 50px;
+  position:fixed;
+  top:50px;
   left:0;
   right:0;
   display:flex;
   justify-content:center;
   gap:25px;
   padding:12px 0;
-  background-color: transparent;
   z-index:20;
 }
 
@@ -63,21 +70,30 @@ nav a {
 
 nav a:hover { color:#555; }
 
-/* GRIGLIA DISCHI */
+/* HAMBURGER */
+.hamburger {
+  display:none;
+  background:none;
+  border:none;
+  font-size:26px;
+  cursor:pointer;
+  color:#111;
+}
+
+/* GRID RELEASES */
 .grid-releases {
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(360px,1fr));
   gap:24px;
   max-width:1000px;
-  margin: 150px auto 40px auto;
-  justify-items: center;
+  margin:150px auto 40px auto;
+  justify-items:center;
 }
 
 .album { text-align:center; }
 
-/* IMMAGINI HOVER */
 .album-image {
-  position: relative;
+  position:relative;
   width:360px;
   height:360px;
 }
@@ -90,103 +106,119 @@ nav a:hover { color:#555; }
   height:100%;
   object-fit:cover;
   border-radius:6px;
-  transition: opacity 0.3s ease, transform 0.25s ease;
+  transition:opacity 0.3s ease, transform 0.25s ease;
 }
 
 .album-image img.back { opacity:0; }
-.album-image:hover img.front { opacity:0; transform: scale(1.05); }
-.album-image:hover img.back { opacity:1; transform: scale(1.05); }
+.album-image:hover img.front { opacity:0; transform:scale(1.05); }
+.album-image:hover img.back { opacity:1; transform:scale(1.05); }
 
-/* TESTO SOTTO IL DISCO */
-.album-info p { margin-top:6px; font-size:0.7rem; color:#444; }
-.album-info .titolo, .album-info .genere { font-weight:500; }
+.album-info p {
+  margin-top:6px;
+  font-size:0.7rem;
+  color:#444;
+}
 
-/* BANNER ANIMATO */
+/* BANNER */
 .banner {
-  background-color: #fff9e6;  
-  color: #111;
-  font-weight: 500;
-  padding: 10px 0;
-  text-align:center;
-  white-space: nowrap;
-  overflow: hidden;
-  margin: 20px 0;
-  border-radius:4px;
+  background:#fff9e6;
+  color:#111;
+  font-weight:500;
+  padding:10px 0;
+  white-space:nowrap;
+  overflow:hidden;
+  margin:20px 0;
 }
 
 .banner span {
-  display: inline-block;
-  padding-left: 100%;
-  animation: scrollBanner 15s linear infinite;
+  display:inline-block;
+  padding-left:100%;
+  animation:scrollBanner 15s linear infinite;
 }
 
 @keyframes scrollBanner {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
+  0% { transform:translateX(0); }
+  100% { transform:translateX(-100%); }
 }
 
 /* FOOTER */
 footer {
-  text-align: center;
-  padding: 25px 20px;
-  font-size: 0.9rem;
-  color: #111;
-  border-top: 1px solid #eee;
-  background-color: #fff9e6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  text-align:center;
+  padding:25px 20px;
+  font-size:0.9rem;
+  border-top:1px solid #eee;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
 }
 
 footer .social-buttons {
-  display: flex;
-  gap: 15px;
+  display:flex;
+  gap:15px;
 }
 
 footer .social-buttons a {
-  color: #111;
-  font-size: 24px;
-  transition: transform 0.3s ease, color 0.3s ease;
+  color:#111;
+  font-size:24px;
 }
 
-footer .social-buttons a:hover {
-  color: #555;
-  transform: translateY(-2px);
-}
+/* ============ MOBILE ============ */
+@media (max-width:768px) {
 
-/* ===========================
-   MEDIA QUERY PER MOBILE
-=========================== */
-@media (max-width: 768px) {
+  .hamburger {
+    display:block;
+  }
 
-  header .logo img { height:60px; }
+  nav {
+    display:none;
+    position:static;
+    flex-direction:column;
+    background:#fff9e6;
+    padding:20px 0;
+    gap:15px;
+  }
 
-  header { flex-direction: column; align-items: center; gap:10px; }
-  nav { position: static; gap:15px; margin-top:10px; }
+  nav.active {
+    display:flex;
+  }
 
-  .grid-releases { grid-template-columns: 1fr; margin-top:120px; padding:0 15px; }
+  .grid-releases {
+    grid-template-columns:1fr;
+    margin-top:120px;
+    padding:0 15px;
+  }
 
-  .album-image { width:100%; max-width:300px; height:auto; aspect-ratio:1/1; }
-  .album-image img { position:relative; width:100%; height:100%; }
+  .album-image {
+    width:100%;
+    max-width:300px;
+    height:auto;
+    aspect-ratio:1/1;
+  }
 
-  .album-info p { font-size:0.85rem; }
-
-  footer { padding:20px 15px; }
-  .banner { font-size:0.85rem; }
+  .album-image img {
+    position:relative;
+    width:100%;
+    height:100%;
+  }
 }
 </style>
 </head>
+
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="logo">
-    <a href="index.html"><img src="images/logo2.png" alt="Logo Etichetta"></a>
+    <a href="index.html">
+      <img src="images/logo2.png" alt="Logo Etichetta">
+    </a>
   </div>
+
+  <button class="hamburger" aria-label="Menu">
+    <i class="fas fa-bars"></i>
+  </button>
 </header>
 
-<!-- BARRA DI NAV -->
 <nav>
   <a href="mission.html">Mission</a>
   <a href="artists.html">Artists</a>
@@ -195,61 +227,57 @@ footer .social-buttons a:hover {
   <a href="contacts.html">Contacts</a>
 </nav>
 
-<!-- RELEASES -->
 <main>
-<section id="releases" class="grid-releases">
+<section class="grid-releases">
 
-  <!-- DISCO 1 -->
   <div class="album">
     <div class="album-image">
-      <img class="front" src="images/discomatadiau.png" alt="Disco 1">
-      <img class="back" src="images/discomatadiauback.png" alt="Disco 1 Retro">
+      <img class="front" src="images/discomatadiau.png">
+      <img class="back" src="images/discomatadiauback.png">
     </div>
     <div class="album-info">
-      <p class="artista"><h3>MATADIAU</h3></p>
-      <p class="titolo">ELIA CASU | ANTONIO PINNA</p>
-      <p class="genere">ML 001</p>
+      <h3>MATADIAU</h3>
+      <p>ELIA CASU | ANTONIO PINNA</p>
+      <p>ML 001</p>
     </div>
   </div>
 
-  <!-- DISCO 2 -->
   <div class="album">
     <div class="album-image">
-      <img class="front" src="images/disco2.png" alt="Disco 2">
-      <img class="back" src="images/disco2back.png" alt="Disco 2 Retro">
+      <img class="front" src="images/disco2.png">
+      <img class="back" src="images/disco2back.png">
     </div>
     <div class="album-info">
-      <p class="artista"><h3>POEMS FOR SAX</h3></p>
-      <p class="titolo">CLAUDIO MELIS</p>
-      <p class="genere">ML 002</p>
+      <h3>POEMS FOR SAX</h3>
+      <p>CLAUDIO MELIS</p>
+      <p>ML 002</p>
     </div>
   </div>
 
 </section>
 
-<!-- BANNER STRISCIONE -->
 <div class="banner">
-  <span>🔥NEW RELEASES OUT ON FEB12TH AND FEB 14TH | CHECK OUT OUR SOCIALS AND FOLLOW US FOR THE LATEST NEWS🔥</span>
+  <span>🔥 NEW RELEASES OUT NOW — FOLLOW US FOR UPDATES 🔥</span>
 </div>
-
 </main>
 
-<!-- FOOTER -->
 <footer>
   &copy; 2026 Mraxani Label
   <div class="social-buttons">
-    <a href="https://www.instagram.com/mraxani.label" target="_blank" title="Instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://www.youtube.com/tuocanale" target="_blank" title="Facebook">
-      <i class="fab fa-facebook"></i>
-    </a>
-    <a href="https://open.spotify.com/playlist/0jHYnSIdXn9onC4SRi8L1Y?si=3jF6r8ELSk2JbNs5tbSFug" target="_blank" title="Spotify">
-      <i class="fab fa-spotify"></i>
-    </a>
+    <a href="https://www.instagram.com/mraxani.label" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-spotify"></i></a>
   </div>
 </footer>
 
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('nav');
+
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
+
 </body>
 </html>
-
