@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mraxani Label – Artists</title>
 
-<!-- TITILLIUM WEB -->
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
@@ -16,6 +15,11 @@ body {
   font-family: 'Titillium Web', sans-serif;
   background-color: #fdfcf7;
   color: #111;
+
+  /* 🔑 CHIAVE */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* HEADER */
@@ -23,7 +27,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 20px 20px;
+  padding: 20px;
 }
 
 /* LOGO */
@@ -31,26 +35,15 @@ header {
   height: 100px;
 }
 
-/* SOCIAL */
-.social {
-  display: flex;
-  gap: 15px;
-}
-
-.social a {
-  text-decoration: none;
-  font-weight: 700;
-  color: #111;
-  font-size: 0.9rem;
-}
-
-/* SEZIONE ARTISTI */
+/* SEZIONE ARTISTI (CONTENUTO FLESSIBILE) */
 #artists {
+  flex: 1; /* 🔑 SPINGE IL FOOTER IN BASSO */
   display: flex;
   justify-content: center;
   margin-top: 10px;
 }
 
+/* GRID */
 .grid-artists {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -68,7 +61,7 @@ header {
 
 .artist-card img {
   width: 100%;
-  aspect-ratio: 1 / 1; /* QUADRATA */
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
@@ -103,10 +96,9 @@ header {
   text-decoration: none;
 }
 
-/* FOOTER */
+/* FOOTER SEMPRE IN FONDO */
 footer {
   text-align: center;
-  margin-top: 60px;
   padding: 25px 0;
   font-size: 0.9rem;
   color: #777;
@@ -121,13 +113,11 @@ footer {
   <a href="index.html" class="logo">
     <img src="images/logo2.png" alt="Mraxani Label">
   </a>
-  </div>
 </header>
 
 <section id="artists">
   <div class="grid-artists">
 
-    <!-- ARTISTA 1 -->
     <div class="artist-card">
       <a href="claudiomelis.html">
         <img src="images/claudiomelis.png" alt="Claudio Melis">
@@ -135,7 +125,6 @@ footer {
       </a>
     </div>
 
-    <!-- ARTISTA 2 -->
     <div class="artist-card">
       <a href="eliacasu.html">
         <img src="images/eliacasu.png" alt="Elia Casu">
@@ -143,7 +132,6 @@ footer {
       </a>
     </div>
 
-    <!-- ARTISTA 3 -->
     <div class="artist-card">
       <a href="artist-antoniopinna.html">
         <img src="images/antoniopinna.png" alt="Antonio Pinna">
