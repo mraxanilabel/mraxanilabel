@@ -127,43 +127,34 @@ nav a:hover { color:#555; }
 
 .paypal-button button:hover { background-color:#333; }
 
-/* FOOTER CON PULSANTI SOCIAL */
 footer {
-  text-align:center;
-  padding:25px 0;
-  font-size:0.9rem;
-  color:#777;
-  border-top:1px solid #eee;
-  margin-top:40px;
-  display:flex;
+  text-align: center;          /* testo e pulsanti centrati */
+  padding: 25px 20px;
+  font-size: 0.9rem;
+  color: #111;                 /* colore testo */
+  border-top: 1px solid #eee;
+  background-color: #fff9e6;   /* bianco caldo */
+  display: flex;
   flex-direction: column;
   align-items: center;
-  gap:10px;
+  gap: 10px;                   /* spazio tra copyright e pulsanti */
 }
 
 footer .social-buttons {
-  display:flex;
-  gap:12px;
+  display: flex;
+  gap: 15px;                   /* spazio tra le icone */
 }
 
 footer .social-buttons a {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background-color:#111;
-  color:#fff;
-  width:36px;
-  height:36px;
-  border-radius:50%;
-  text-decoration:none;
-  transition: background 0.2s;
+  color: #111;                 /* icone nere */
+  font-size: 24px;             /* dimensione icone */
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-footer .social-buttons a:hover { background-color:#333; }
-
-footer a { color:#111; text-decoration:none; margin:0 5px; }
-footer a:hover { color:#555; }
-
+footer .social-buttons a:hover {
+  color: #555;                 /* leggero scurimento al passaggio del mouse */
+  transform: translateY(-2px); /* effetto sollevamento */
+}
 </style>
 </head>
 <body>
@@ -220,14 +211,14 @@ footer a:hover { color:#555; }
 <footer>
   &copy; 2026 Mraxani Label
   <div class="social-buttons">
-    <a href="#" target="_blank" title="Instagram">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37a4 4 0 1 1-4.88-4.88 4 4 0 0 1 4.88 4.88z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+    <a href="https://www.instagram.com/tuoaccount" target="_blank" title="Instagram">
+      <i class="fab fa-instagram"></i>
     </a>
-    <a href="#" target="_blank" title="YouTube">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12c0-1.104-.896-2-2-2H4c-1.104 0-2 .896-2 2v0c0 1.104.896 2 2 2h16c1.104 0 2-.896 2-2z"></path><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+    <a href="https://www.youtube.com/tuocanale" target="_blank" title="YouTube">
+      <i class="fab fa-youtube"></i>
     </a>
-    <a href="#" target="_blank" title="Spotify">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a9 9 0 0 1 14 0"></path><path d="M4 9.5a12 12 0 0 1 16 0"></path><path d="M3 7a15 15 0 0 1 18 0"></path></svg>
+    <a href="https://open.spotify.com/artist/tuoartista" target="_blank" title="Spotify">
+      <i class="fab fa-spotify"></i>
     </a>
   </div>
 </footer>
