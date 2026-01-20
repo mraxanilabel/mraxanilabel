@@ -1,1 +1,137 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artista - Nome Artista</title>
+
+<!-- FONT TITILLIUM WEB -->
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+  /* RESET COMPLETO */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #fff9e6;
+    color: #111;
+  }
+
+  /* HEADER LOGO A SINISTRA, POSIZIONE ASSOLUTA */
+  header {
+    position: absolute; /* esce dal flusso normale */
+    top: 0;
+    left: 0;
+    padding: 10px 10px;
+  }
+
+  header a img {
+    height: 60px;
+    width: auto;
+    display: block;
+  }
+
+  /* CONTENUTO ARTISTA */
+  .artist-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 50px; /*  distacco dal bordo superiore */
+    text-align: center;
+  }
+
+  .artist-container img.artista {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+
+  p.bio {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 25px;
+  }
+    .artist-social {
+  display: flex;
+    justify-content: center;
+  gap: 20px;
+  margin: 20px 0 30px; /* spazio sopra e sotto */
+}
+
+.artist-social a {
+  color: #111;
+  font-size: 22px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.artist-social a:hover {
+  color: #555;
+  transform: translateY(-2px);
+}
+
+
+  /* PLAYER SPOTIFY */
+  .spotify-player {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+
+  .spotify-player iframe {
+    width: 100%;
+    height: 480px;
+    border: none;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html">
+    <img src="images/logo2.png" alt="Logo Etichetta">
+  </a>
+</header>
+
+<div class="artist-container">
+  <h1>LAURA MURA</h1>
+  <p class="bio">
+    Elia Casu is an Italian musician and composer whose work moves between guitar, electronics, and soundscapes. 
+    With roots in jazz and improvisation, he explores organic textures and deep grooves, creating music that balances introspection and motion. 
+    His sound blends melodic sensitivity with electronic precision, shaping a contemporary ambient-inspired style.
+  </p>
+    <!-- SOCIAL ARTISTA -->
+<div class="artist-social">
+  <a href="https://www.instagram.com/artista" target="_blank" title="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://www.youtube.com/artista" target="_blank" title="YouTube">
+    <i class="fab fa-youtube"></i>
+  </a>
+  <a href="https://open.spotify.com/artist/artista" target="_blank" title="Spotify">
+    <i class="fab fa-spotify"></i>
+  </a>
+</div>
+  <div class="spotify-player">
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/4nE5HMfp2CWEmVlQEO6jvz?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+</div>
+
+</body>
+</html>
+
 
