@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+<link rel="stylesheet" href="css/style.css">
 <style>
 /* RESET */
 * {
@@ -92,6 +92,12 @@ main {
     background-color: #fff9e6; 
     flex-grow: 1; /* fa crescere la sezione per spingere il footer in basso se la pagina è corta */
   }
+  
+  @media (max-width: 768px) {
+  header .logo img {
+    height: 60px;
+  }
+}
 </style>
 </head>
 
